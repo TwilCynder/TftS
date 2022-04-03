@@ -38,6 +38,8 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state(delta)
 		
+
+		
 func attack_state(delta):
 	pass
 		

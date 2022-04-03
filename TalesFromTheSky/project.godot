@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Hitbox",
+"language": "GDScript",
+"path": "res://Overlap/Hitbox.gd"
+}, {
+"base": "Node2D",
+"class": "Map",
+"language": "GDScript",
+"path": "res://Scripts/Map.gd"
+}, {
+"base": "Object",
+"class": "NodeIterator",
+"language": "GDScript",
+"path": "res://Scripts/NodeIterator.gd"
+} ]
+_global_script_class_icons={
+"Hitbox": "",
+"Map": "",
+"NodeIterator": ""
+}
+
 [application]
 
 config/name="TalesFromTheSky"

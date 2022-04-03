@@ -5,13 +5,11 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+class_name Map
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Map script")
-	var layerNode
-	
+	print("Generic map startup")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func iterateOnChildren():
+	pass
