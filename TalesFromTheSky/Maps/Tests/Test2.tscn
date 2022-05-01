@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/tutorial/GrassBackground.png" type="Texture" id=4]
-[ext_resource path="res://Maps/Tests/Test1.gd" type="Script" id=5]
+[ext_resource path="res://Maps/Tests/Test2.gd" type="Script" id=5]
 [ext_resource path="res://Maps/Tests/cliffTileset.tres" type="TileSet" id=6]
 [ext_resource path="res://World/tutorial/Grass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MapElements/Destination.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 5 )
@@ -71,6 +72,9 @@ position = Vector2( 88, 48 )
 
 [node name="Grass5" parent="Layer 0/YSort" instance=ExtResource( 7 )]
 position = Vector2( 136, 64 )
+
+[node name="Destination" parent="Layer 0" instance=ExtResource( 8 )]
+position = Vector2( 16, 144 )
 
 [node name="Layer 1" type="Node2D" parent="."]
 z_index = 1

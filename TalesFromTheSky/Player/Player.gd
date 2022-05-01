@@ -7,13 +7,36 @@ enum {
 
 class_name Player
 
+export(bool) var allow_redundancy = false #If unchecked, delete the hero if there is another on the same Map ? (typically on maps with Auto Hero)
+export(bool) var use_as_default_destination = true #If checked, will
+
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
+onready var Map = load("res://Scripts/Map.gd")
+
+func _enter_tree():
+	print("Player enter tree")
+	
+	var Map = load("res://Scripts/Map.gd")
+	assert(Map, "Couldn't load map class")
+	
+	var root = get_tree().root.get_child(0)
+	assert(root != null, "Can't find root node")
+	if (root is Map):
+		if root.get_hero():
+			if not allow_redundancy:
+				print("Deleting this Player because the map already has a hero")
+				get_parent().remove_child(self)
+				queue_free()
+		else:
+			root.set_hero(self)
+			
 func _ready():
-	print("Hello there !")
+	print("Hello there ! (Player ready)")
 	animationTree.active = true
+	
 
 const WALK_SPEED = 100
 var ACCELERATION = 200
@@ -98,7 +121,7 @@ func free_state(delta):
 #
 #	move_and_slide(velocity)
 	
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "CenterArea",
+"language": "GDScript",
+"path": "res://Player/CenterArea.gd"
+}, {
+"base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
 "path": "res://Overlap/Hitbox.gd"
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
+"CenterArea": "",
 "Hitbox": "",
 "Map": "",
 "NodeIterator": "",

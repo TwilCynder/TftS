@@ -76,12 +76,12 @@ position = Vector2( 80.8567, 48.7937 )
 [node name="Grass5" parent="Layer 0/YSort" instance=ExtResource( 7 )]
 position = Vector2( 120.126, 59.2378 )
 
-[node name="Area2D" parent="Layer 0" instance=ExtResource( 8 )]
-position = Vector2( -22.8474, 64.9007 )
+[node name="Portal" parent="Layer 0" instance=ExtResource( 8 )]
+position = Vector2( 0, 144 )
 target_scene_path = "res://Maps/Tests/Test2.tscn"
+location = Vector2( 100, 100 )
 
-[node name="CollisionShape2D" parent="Layer 0/Area2D" index="0"]
-position = Vector2( 22.8474, 78.0993 )
+[node name="CollisionShape2D" parent="Layer 0/Portal" index="0"]
 shape = SubResource( 1 )
 
 [node name="Layer 1" type="Node2D" parent="."]
@@ -89,4 +89,4 @@ z_index = 1
 
 [node name="YSort" type="YSort" parent="Layer 1"]
 
-[editable path="Layer 0/Area2D"]
+[editable path="Layer 0/Portal"]
