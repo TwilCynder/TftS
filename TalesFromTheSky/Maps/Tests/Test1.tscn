@@ -14,6 +14,7 @@ extents = Vector2( 8, 16 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 5 )
+map_name = "Test 1"
 
 [node name="Layer 0" type="Node2D" parent="."]
 

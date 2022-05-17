@@ -17,7 +17,7 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var Map = load("res://Scripts/Map.gd")
 
 func _enter_tree():
-	print("Player enter tree")
+	print("> Player enter tree")
 	
 	var Map = load("res://Scripts/Map.gd")
 	assert(Map, "Couldn't load map class")
@@ -27,14 +27,14 @@ func _enter_tree():
 	if (root is Map):
 		if root.get_hero():
 			if not allow_redundancy:
-				print("Deleting this Player because the map already has a hero")
+				print("> Deleting this Player because the map already has a hero")
 				get_parent().remove_child(self)
 				queue_free()
 		else:
 			root.set_hero(self)
 			
 func _ready():
-	print("Hello there ! (Player ready)")
+	print("> Hello there ! (Player ready)")
 	animationTree.active = true
 	
 

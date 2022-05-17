@@ -5,19 +5,21 @@ class_name Map
 onready var Player = load("res://Player/Player.tscn")
 
 export(bool) var auto_hero = true #If true, a hero will be created automatically
+export(String) var map_name = "" setget ,get_name
 
 var hero = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Generic map ready")
+	print("> Generic map ready")
 	if (auto_hero and not get_hero()):
-		print("Auto hero creation")
+		print("> Auto hero creation")
 		var player = Player.instance()
 		add_child(player)
 		set_hero(player)
 
 func _enter_tree():
+	print("> Map enter tree")
 	pass
 	
 func set_hero(h: Player):
@@ -27,3 +29,10 @@ func set_hero(h: Player):
 
 func get_hero():
 	return hero
+
+func get_name():
+	return map_name
+
+func set_name(name: String):
+	if Engine.is_editor_hint():
+		map_name = name
