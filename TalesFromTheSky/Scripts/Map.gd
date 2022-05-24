@@ -1,3 +1,5 @@
+tool
+
 extends Node2D
 
 class_name Map
@@ -26,7 +28,6 @@ func set_hero(h: Player):
 	assert(hero == null, "Attempted to set the curent Hero but it was already set")
 	hero = h
 		
-
 func get_hero():
 	return hero
 
@@ -34,5 +35,6 @@ func get_name():
 	return map_name
 
 func set_name(name: String):
-	if Engine.is_editor_hint():
+	print("Editor hint ? : ", Engine.editor_hint)
+	if Engine.editor_hint:
 		map_name = name
