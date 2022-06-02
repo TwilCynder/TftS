@@ -18,17 +18,16 @@ func _ready():
 		print("> Auto hero creation")
 		var player = Player.instance()
 		add_child(player)
-		set_hero(player)
 
 func _enter_tree():
 	print("> Map enter tree")
-	pass
+	
 	
 func set_hero(h: Player):
 	assert(hero == null, "Attempted to set the curent Hero but it was already set")
 	hero = h
 		
-func get_hero():
+func get_hero() -> Player:
 	return hero
 
 func get_name():

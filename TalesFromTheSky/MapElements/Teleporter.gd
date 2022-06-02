@@ -11,30 +11,26 @@ func _get_configuration_warning() -> String:
 	else:
 		return ""
 
-func _setPosition(player: Player):
+func _setPosition(player: Player) -> void:
 	print(location)
 	player.set_position(location)
 
-func _handlePosition(tree: SceneTree):
-	var map = tree.root.get_child(0)
-	if (map is Map):
-		map = map as Map
-		print("Map name : " + map.map_name)
-		var hero = map.get_hero()
-		_setPosition(hero)
+func _handlePosition(tree: SceneTree) -> void:
+	yield(SceneManager, "scene_loaded")
+	var player: Player = SceneManager.current_scene.get_hero()
+	if not player:
+		print("WARNING : Map where we teleported to has no hero (maybe check Auto Hero ?)")
+		return
+	player.position = location
 
-func _start_teleport_animation():
-	SceneManager.change_scene(target_scene_path)
 
 func _teleport():
 	
 	var tree = get_tree()
-	if tree.change_scene(target_scene_path) == OK:
-		_handlePosition(tree)
-	else:
-		print("Error : Unavailable scene : " + target_scene_path)
+	SceneManager.change_scene(target_scene_path)
+	_handlePosition(tree)
 
 
 func _on_Portal_area_entered(area):
 	if (area is CenterArea and area.get_parent() is Player):
-		_start_teleport_animation()
+		_teleport()

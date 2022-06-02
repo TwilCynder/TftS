@@ -19,8 +19,12 @@ var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
 
 func _enter_tree():
 	print("> Player enter tree")
+
+			
+func _ready():
+	print("> Hello there ! (Player ready)")
 	
-	var root = TreeUtil.get_current_map(get_tree())
+	var root = SceneManager.current_scene
 	assert(root != null, "Can't find root node")
 	if root.get_hero():
 		if not allow_redundancy:
@@ -29,10 +33,9 @@ func _enter_tree():
 			queue_free()
 	else:
 		root.set_hero(self)
-			
-func _ready():
-	print("> Hello there ! (Player ready)")
+	
 	animationTree.active = true
+	
 	
 
 const WALK_SPEED = 100
