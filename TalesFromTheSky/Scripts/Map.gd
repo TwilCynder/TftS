@@ -6,6 +6,8 @@ class_name Map
 
 onready var Player = load("res://Player/Player.tscn")
 
+var _destinations: Dictionary = {}
+
 export(bool) var auto_hero = true #If true, a hero will be created automatically
 export(String) var map_name = "" setget ,get_name
 
@@ -22,6 +24,9 @@ func _ready():
 func _enter_tree():
 	print("> Map enter tree")
 	
+	
+func add_destination(dest: Destination, name: String):
+	_destinations[name] = dest
 	
 func set_hero(h: Player):
 	assert(hero == null, "Attempted to set the curent Hero but it was already set")

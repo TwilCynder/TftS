@@ -1,9 +1,13 @@
 tool
 
-extends Area2D
+extends Node2D
+
+class_name Teleporter_base
 
 export(String, FILE) var target_scene_path = ""
-export(Vector2) var location = Vector2.ZERO
+
+func _exit_tree():
+	print("> Teleporter exits tree")
 
 func _get_configuration_warning() -> String:
 	if target_scene_path == "":
@@ -11,26 +15,21 @@ func _get_configuration_warning() -> String:
 	else:
 		return ""
 
-func _setPosition(player: Player) -> void:
-	print(location)
-	player.set_position(location)
+func _setPosition(player: Player):
+	pass
 
 func _handlePosition(tree: SceneTree) -> void:
-	yield(SceneManager, "scene_loaded")
 	var player: Player = SceneManager.current_scene.get_hero()
+	print(SceneManager.current_scene._destinations)
 	if not player:
 		print("WARNING : Map where we teleported to has no hero (maybe check Auto Hero ?)")
 		return
-	player.position = location
+	_setPosition(player)
 
 
 func _teleport():
-	
 	var tree = get_tree()
+	SceneManager.enter_limbo(self)
 	SceneManager.change_scene(target_scene_path)
+	yield(SceneManager, "scene_loaded")
 	_handlePosition(tree)
-
-
-func _on_Portal_area_entered(area):
-	if (area is CenterArea and area.get_parent() is Player):
-		_teleport()

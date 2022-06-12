@@ -6,6 +6,7 @@ signal scene_loaded
 onready var _tree = get_tree()
 onready var transition_fade = $CanvasLayer/SceneTransitionRect
 onready var current_scene: Map = _tree.current_scene
+onready var limbo = $Limbo
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,17 +31,25 @@ static func load_map(path: String) -> Map:
 	return map
 
 func _replace_scene(path: String) -> void:
-	print("Change scene")
-	_tree.current_scene.queue_free()
+	print("> Initiating scene change")
 	
 	emit_signal("scene_unloaded")
-	current_scene = load_map(path)
-	emit_signal("scene_loaded")
+	var new_scene = load_map(path)
+	_tree.current_scene.queue_free()
 	
 	yield(_tree, "idle_frame")
 	
+	print("> Swapping scenes")
+	current_scene = new_scene
 	_tree.get_root().add_child(current_scene)
 	_tree.set_current_scene(current_scene)
 	
-	print("Emitted signal")
+	emit_signal("scene_loaded")
 	
+	for node in limbo.get_children():
+		limbo.remove_child(node)
+		
+func enter_limbo(node: Node) -> void:
+	node.get_parent().remove_child(node)
+	limbo.add_child(node)
+	print(node.get_parent())
