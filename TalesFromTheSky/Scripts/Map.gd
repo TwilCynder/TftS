@@ -9,9 +9,17 @@ onready var Player = load("res://Player/Player.tscn")
 var _destinations: Dictionary = {}
 
 export(bool) var auto_hero = true #If true, a hero will be created automatically
-export(String) var map_name = "" setget ,get_name
+export(String) var map_name = "" setget set_name,get_name
 
 var hero = null
+
+func get_name():
+	return map_name
+
+func set_name(name: String):
+	print("Editor hint ? : ", Engine.editor_hint)
+	if Engine.editor_hint:
+		map_name = name
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,8 +33,11 @@ func _enter_tree():
 	print("> Map enter tree")
 	
 	
-func add_destination(dest: Destination, name: String):
+func add_destination(dest: Destination, name: String) -> void:
 	_destinations[name] = dest
+	
+func get_destination(name: String) -> Destination:
+	return _destinations.get(name)
 	
 func set_hero(h: Player):
 	assert(hero == null, "Attempted to set the curent Hero but it was already set")
@@ -34,11 +45,3 @@ func set_hero(h: Player):
 		
 func get_hero() -> Player:
 	return hero
-
-func get_name():
-	return map_name
-
-func set_name(name: String):
-	print("Editor hint ? : ", Engine.editor_hint)
-	if Engine.editor_hint:
-		map_name = name

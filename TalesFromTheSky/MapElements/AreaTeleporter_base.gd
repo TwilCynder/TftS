@@ -1,4 +1,4 @@
-extends Teleporter_base
+extends "res://MapElements/Teleporter_base.gd"
 
 
 func _on_Teleporter_base_area_entered(area):

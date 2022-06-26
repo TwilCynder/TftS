@@ -1,6 +1,6 @@
-extends Teleporter_base
+extends "res://MapElements/Teleporter_base.gd"
 
-class_name TeleporterPosition
+#class_name TeleporterPosition
 
 export(Vector2) var location = Vector2.ZERO
 

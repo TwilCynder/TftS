@@ -6,7 +6,14 @@ signal scene_loaded
 onready var _tree = get_tree()
 onready var transition_fade = $CanvasLayer/SceneTransitionRect
 onready var current_scene: Map = _tree.current_scene
+var hero: Player setget set_hero, get_hero
 onready var limbo = $Limbo
+
+func get_hero():
+	return current_scene.get_hero()
+	
+func set_hero(hero: Player):
+	current_scene.set_hero(hero)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,6 +33,7 @@ func change_scene(path) -> void:
 
 static func load_map(path: String) -> Map:
 	var map_scene = ResourceLoader.load(path)
+	assert(map_scene is PackedScene, "Can't load map " + path + "; file is not a Scene.")
 	var map =  map_scene.instance()
 	assert(map is Map, "The root node of the loaded scene is not a Map")
 	return map
@@ -52,4 +60,3 @@ func _replace_scene(path: String) -> void:
 func enter_limbo(node: Node) -> void:
 	node.get_parent().remove_child(node)
 	limbo.add_child(node)
-	print(node.get_parent())

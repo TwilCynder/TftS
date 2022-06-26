@@ -1,19 +1,25 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MapElements/TeleporterDestination.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/tutorial/GrassBackground.png" type="Texture" id=4]
 [ext_resource path="res://Maps/Tests/Test1.gd" type="Script" id=5]
 [ext_resource path="res://Maps/Tests/cliffTileset.tres" type="TileSet" id=6]
 [ext_resource path="res://World/tutorial/Grass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://MapElements/TeleporterPosition.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 18.5, 10 )
+extents = Vector2( 10, 16 )
 
 [node name="World" type="Node2D"]
 position = Vector2( 1, -8 )
 script = ExtResource( 5 )
+map_name = "Test"
 
 [node name="Layer 0" type="Node2D" parent="."]
 
@@ -73,6 +79,9 @@ position = Vector2( 80.8567, 48.7937 )
 [node name="Grass5" parent="Layer 0/YSort" instance=ExtResource( 7 )]
 position = Vector2( 120.126, 59.2378 )
 
+[node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
+position = Vector2( 31, 40 )
+
 [node name="TeleporterPosition" parent="Layer 0" instance=ExtResource( 8 )]
 position = Vector2( 159, 5 )
 target_scene_path = "res://Maps/Tests/Test2.tscn"
@@ -80,6 +89,14 @@ location = Vector2( 64, 64 )
 
 [node name="CollisionShape2D" parent="Layer 0/TeleporterPosition" index="0"]
 position = Vector2( -2.5, 0 )
+shape = SubResource( 1 )
+
+[node name="TeleporterDestination" parent="Layer 0" instance=ExtResource( 3 )]
+position = Vector2( -1, 144 )
+target_scene_path = "res://Maps/Tests/Test2.tscn"
+destination = "test"
+
+[node name="CollisionShape2D" parent="Layer 0/TeleporterDestination" index="0"]
 shape = SubResource( 2 )
 
 [node name="Layer 1" type="Node2D" parent="."]
@@ -88,3 +105,4 @@ z_index = 1
 [node name="YSort" type="YSort" parent="Layer 1"]
 
 [editable path="Layer 0/TeleporterPosition"]
+[editable path="Layer 0/TeleporterDestination"]

@@ -2,9 +2,9 @@ tool
 
 extends Node2D
 
-class_name Teleporter_base
+#class_name Teleporter_base
 
-export(String, FILE) var target_scene_path = ""
+export(String, FILE, "*.tscn") var target_scene_path = ""
 
 func _exit_tree():
 	print("> Teleporter exits tree")
@@ -20,7 +20,6 @@ func _setPosition(player: Player):
 
 func _handlePosition(tree: SceneTree) -> void:
 	var player: Player = SceneManager.current_scene.get_hero()
-	print(SceneManager.current_scene._destinations)
 	if not player:
 		print("WARNING : Map where we teleported to has no hero (maybe check Auto Hero ?)")
 		return
@@ -28,6 +27,7 @@ func _handlePosition(tree: SceneTree) -> void:
 
 
 func _teleport():
+	assert(target_scene_path != "", "Teleporter's target scene path is empty")
 	var tree = get_tree()
 	SceneManager.enter_limbo(self)
 	SceneManager.change_scene(target_scene_path)
