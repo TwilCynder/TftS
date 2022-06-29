@@ -70,9 +70,14 @@ position = Vector2( 88, 48 )
 [node name="Grass5" parent="Layer 0/YSort" instance=ExtResource( 7 )]
 position = Vector2( 136, 64 )
 
-[node name="Destination" parent="Layer 0" instance=ExtResource( 8 )]
+[node name="Destination" parent="Layer 0/YSort" instance=ExtResource( 8 )]
 position = Vector2( 16, 144 )
 dest_name = "test"
+default = true
+
+[node name="Destination2" parent="Layer 0/YSort" instance=ExtResource( 8 )]
+position = Vector2( 157.632, 40 )
+dest_name = "test2"
 
 [node name="Layer 1" type="Node2D" parent="."]
 z_index = 1

@@ -6,7 +6,7 @@ export(String) var destination = ""
 
 func _setPosition(player: Player):
 	var destination_: Destination = SceneManager.current_scene.get_destination(destination)
-	assert (destination_ != null, "Destination not found")
+	assert (destination_ != null, "Destination not found : " + destination)
 	
 	player.position = destination_.position
 	
