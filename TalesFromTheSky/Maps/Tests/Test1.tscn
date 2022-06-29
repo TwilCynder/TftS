@@ -106,8 +106,9 @@ z_index = 1
 [node name="YSort" type="YSort" parent="Layer 1"]
 
 [node name="test_tool" type="Sprite" parent="."]
+visible = false
 position = Vector2( 151, 40 )
-rotation = 35114.7
+rotation = 35408.3
 texture = ExtResource( 10 )
 script = ExtResource( 11 )
 

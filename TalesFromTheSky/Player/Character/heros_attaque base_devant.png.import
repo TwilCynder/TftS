@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/heros_attaque base_devant.png-ba34771088405b8f88cd731435eb82b2.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Player/Character/heros_attaque base_devant.png"
+dest_files=[ "res://.import/heros_attaque base_devant.png-ba34771088405b8f88cd731435eb82b2.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
