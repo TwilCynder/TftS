@@ -6,7 +6,9 @@
 radius = 10.6458
 height = 9.03558
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Tree" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="Tree" type="Sprite" parent="."]
 position = Vector2( 0, -14.1581 )

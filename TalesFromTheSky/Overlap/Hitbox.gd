@@ -7,4 +7,6 @@ enum HitboxType {
 	SWORD
 }
 
+var knockback = null
+
 export(HitboxType) var hitboxType = HitboxType.NONE

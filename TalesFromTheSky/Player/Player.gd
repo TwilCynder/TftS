@@ -13,6 +13,7 @@ export(bool) var use_as_default_destination = true #If checked, will
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var swordHitbox = $HitboxPivot/Swordhitbox
 
 var Map = load("res://Scripts/Map.gd")
 var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
@@ -42,19 +43,22 @@ const WALK_SPEED = 100
 var ACCELERATION = 200
 
 var state = FREE
-var velocity = Vector2.ZERO
-var input_vector = Vector2.ZERO
+var velocity = Vector2.ZERO #Current move speed (input_vector * WALK_SPEED when moving in FREE state)
+var input_vector = Vector2.ZERO 
+var direction: Vector2 = Vector2.ZERO #last non-zero value input_vector had in FREE state
 #var direction = "Right"
 
 func start_state_attack():
 	state = ATTACK
-	animationState.travel("Attack")
+	setAnimation("Attack")
+	swordHitbox.knockback = direction
 
 func start_state_free():
 	state = FREE
 
 func attack_animation_finished():
 	start_state_free()
+	swordHitbox.knockback = null
 
 func _physics_process(delta):
 	match state:
@@ -63,10 +67,12 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state(delta)
 		
-
-		
 func attack_state(delta):
 	pass
+		
+func setAnimation(anim: String):
+	animationState.travel(anim)
+	animationTree.set("parameters/" + anim + "/blend_position", direction)
 		
 func setAnimDirection(input_vector):
 	animationTree.set("parameters/Idle/blend_position", input_vector)
@@ -80,10 +86,10 @@ func free_state(delta):
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
 	if input_vector != Vector2.ZERO:
-		setAnimDirection(input_vector)
-		animationState.travel("Run")
+		direction = input_vector
+		setAnimation("Run")
 	else:
-		animationState.travel("Idle")
+		setAnimation("Idle")
 		
 	velocity = input_vector * WALK_SPEED
 	move_and_slide(velocity)
@@ -91,7 +97,7 @@ func free_state(delta):
 	if Input.is_action_just_pressed("attack"):
 		start_state_attack()
 		
-##==== THE DIRTY AND POSSIBLY MORE EFFICIENT WAY
+##==== THE DIRTY AND POSSIBLY MORE EFFICIENT WAY (ok i don't think it is)
 #func free_state(delta):
 #	input_vector = Vector2.ZERO
 #	if Input.is_action_pressed("ui_right"):

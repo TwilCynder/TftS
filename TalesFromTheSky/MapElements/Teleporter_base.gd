@@ -16,9 +16,9 @@ func _get_configuration_warning() -> String:
 		return ""
 
 func _setPosition(player: Player):
-	pass
+	print("> TP_base setPosition (SHOULD NEVER BE CALLED)")
 
-func _handlePosition(tree: SceneTree) -> void:
+func _handlePosition() -> void:
 	var player: Player = SceneManager.current_scene.get_hero()
 	if not player:
 		print("WARNING : Map where we teleported to has no hero (maybe check Auto Hero ?)")
@@ -28,8 +28,7 @@ func _handlePosition(tree: SceneTree) -> void:
 
 func _teleport():
 	assert(target_scene_path != "", "Teleporter's target scene path is empty")
-	var tree = get_tree()
 	SceneManager.enter_limbo(self)
 	SceneManager.change_scene(target_scene_path)
 	yield(SceneManager, "scene_loaded")
-	_handlePosition(tree)
+	_handlePosition()
