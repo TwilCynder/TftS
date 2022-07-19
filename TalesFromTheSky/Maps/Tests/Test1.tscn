@@ -51,7 +51,7 @@ tile_data = PoolIntArray( 5, 0, 0, 6, 0, 1, 7, 0, 1, 8, 0, 2, 65541, 0, 131072, 
 position = Vector2( 141.632, 204.092 )
 
 [node name="Bush" parent="Layer 0/YSort" instance=ExtResource( 2 )]
-position = Vector2( 43.7359, 205.111 )
+position = Vector2( 48, 208 )
 
 [node name="StaticBody2D2" parent="Layer 0/YSort" instance=ExtResource( 2 )]
 position = Vector2( 220.1, 69.7719 )
@@ -118,7 +118,7 @@ z_index = 1
 [node name="test_tool" type="Sprite" parent="."]
 visible = false
 position = Vector2( 151, 40 )
-rotation = 52323.2
+rotation = 58076.8
 texture = ExtResource( 10 )
 script = ExtResource( 11 )
 

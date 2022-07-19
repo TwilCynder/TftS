@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tilesets (Secret of Mana)/tileset_secret_of_mana.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
+[ext_resource path="res://Tilesets (Secret of Mana)/tileset_secret_of_mana.png" type="Texture" id=2]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset_secret_of_mana.png 0"
-0/texture = ExtResource( 1 )
+0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 464, 464, 16, 16 )
+0/region = Rect2( 592, 160, 16, 16 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -18,13 +18,31 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "tileset_secret_of_mana.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 112, 144 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [node name="Map" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 8, 8 )
-cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 2, 0, 0, 65539, 0, 0 )
+tile_data = PoolIntArray( 65542, 0, 0, 65543, 1, 0, 65544, 0, 0, 65546, 0, 0, 65548, 0, 0, 65550, 0, 0, 65552, 0, 0, 131083, 1, 0, 262150, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 592, 160, 16, 16 )
