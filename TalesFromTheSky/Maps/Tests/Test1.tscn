@@ -118,7 +118,7 @@ z_index = 1
 [node name="test_tool" type="Sprite" parent="."]
 visible = false
 position = Vector2( 151, 40 )
-rotation = 56675.1
+rotation = 56723.0
 texture = ExtResource( 10 )
 script = ExtResource( 11 )
 
