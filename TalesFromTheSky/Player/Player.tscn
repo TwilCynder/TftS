@@ -808,9 +808,8 @@ tracks/2/keys = {
 "values": [ ExtResource( 8 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=14]
-radius = 8.0
-height = 0.0
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 6.3517, 7.09839 )
 
 [sub_resource type="AnimationNodeAnimation" id=15]
 animation = "AttackLeft"
@@ -937,7 +936,7 @@ anims/Run_Right = SubResource( 12 )
 anims/Run_Up = SubResource( 13 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -0.23597 )
+position = Vector2( 0.927031, 0.662165 )
 rotation = -1.5708
 shape = SubResource( 14 )
 
