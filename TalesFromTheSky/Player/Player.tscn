@@ -936,7 +936,7 @@ anims/Run_Left = SubResource( 11 )
 anims/Run_Right = SubResource( 12 )
 anims/Run_Up = SubResource( 13 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.23597 )
 rotation = -1.5708
 shape = SubResource( 14 )

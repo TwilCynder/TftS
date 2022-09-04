@@ -44,6 +44,7 @@ func get_destination(name: String) -> Destination:
 	
 func set_hero(h: Player):
 	assert(hero == null, "Attempted to set the curent Hero but it was already set")
+	print("> Set hero : ", h)
 	hero = h
 		
 func get_hero() -> Player:

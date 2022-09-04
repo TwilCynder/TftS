@@ -2,6 +2,7 @@ extends Node2D
 
 signal scene_unloaded
 signal scene_loaded
+signal player_interact(hero)
 
 onready var _tree = get_tree()
 onready var transition_fade = $CanvasLayer/SceneTransitionRect
@@ -60,3 +61,7 @@ func _replace_scene(path: String) -> void:
 func enter_limbo(node: Node) -> void:
 	node.get_parent().remove_child(node)
 	limbo.add_child(node)
+	
+func on_hero_interact(hero: Player):
+	emit_signal("player_interact", hero)
+

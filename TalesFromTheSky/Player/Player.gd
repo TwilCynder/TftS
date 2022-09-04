@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends MapEntity
 
 enum {
 	FREE,
@@ -7,6 +7,8 @@ enum {
 
 class_name Player
 
+signal interact()
+
 export(bool) var allow_redundancy = false #If unchecked, delete the hero if there is another on the same Map ? (typically on maps with Auto Hero)
 export(bool) var use_as_default_destination = true #If checked, will
 
@@ -14,8 +16,8 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/Swordhitbox
+onready var collisionBox = $CollisionBox
 
-var Map = load("res://Scripts/Map.gd")
 var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
 
 func _enter_tree():
@@ -37,16 +39,20 @@ func _ready():
 	
 	animationTree.active = true
 	
-	
-
 const WALK_SPEED = 100
 var ACCELERATION = 200
 
 var state = FREE
 var velocity = Vector2.ZERO #Current move speed (input_vector * WALK_SPEED when moving in FREE state)
 var input_vector = Vector2.ZERO 
-var direction: Vector2 = Vector2.ZERO #last non-zero value input_vector had in FREE state
+var direction: Vector2 = Vector2.RIGHT #last non-zero value input_vector had in FREE state
 #var direction = "Right"
+
+func is_looking_at(point: Vector2)->bool:
+	return Util.is_same_direction4(direction, point - position)
+
+func is_looking_towards(point: Vector2)->bool:
+	return Util.is_similar_direction4(direction, point - position)
 
 func start_state_attack():
 	state = ATTACK
@@ -60,7 +66,11 @@ func attack_animation_finished():
 	start_state_free()
 	swordHitbox.knockback = null
 
-func _physics_process(delta):
+func _process(delta: float):
+	if Input.is_action_just_pressed("ui_accept"):
+		SceneManager.on_hero_interact(self)
+
+func _physics_process(delta: float):
 	match state:
 		FREE:	
 			free_state(delta)
@@ -96,6 +106,9 @@ func free_state(delta):
 
 	if Input.is_action_just_pressed("attack"):
 		start_state_attack()
+		
+func get_direction()->Vector2:
+	return direction
 		
 ##==== THE DIRTY AND POSSIBLY MORE EFFICIENT WAY (ok i don't think it is)
 #func free_state(delta):

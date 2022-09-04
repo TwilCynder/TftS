@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
@@ -11,13 +11,16 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://Scripts/test_tool.gd" type="Script" id=11]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://MapElements/InteractionTeleporterDestination.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 [node name="World" type="Node2D"]
 position = Vector2( 0, -8 )
@@ -36,7 +39,7 @@ region_rect = Rect2( 0, 0, 576, 384 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -65527, 0, 0, -65526, 0, 2, 9, 0, 65536, 10, 0, 65538, 65536, 0, 0, 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65541, 0, 1, 65542, 0, 1, 65543, 0, 1, 65544, 0, 1, 65545, 0, 131078, 65546, 0, 65538, 131072, 0, 131072, 131073, 0, 131073, 131074, 0, 131073, 131075, 0, 131073, 131076, 0, 131073, 131077, 0, 131073, 131078, 0, 131073, 131079, 0, 131073, 131080, 0, 131073, 131081, 0, 65542, 131082, 0, 65538, 196617, 0, 65536, 196618, 0, 65538, 262153, 0, 65536, 262154, 0, 65538, 327689, 0, 65536, 327690, 0, 65538, 393225, 0, 65536, 393226, 0, 131077, 393227, 0, 1, 393228, 0, 1, 393229, 0, 1, 393230, 0, 1, 393231, 0, 1, 393232, 0, 1, 393233, 0, 1, 393234, 0, 1, 393235, 0, 1, 393236, 0, 2, 458761, 0, 65536, 458762, 0, 65537, 458763, 0, 65537, 458764, 0, 65541, 458765, 0, 131073, 458766, 0, 131073, 458767, 0, 131073, 458768, 0, 131073, 458769, 0, 131073, 458770, 0, 131073, 458771, 0, 131073, 458772, 0, 131074, 589821, 0, 0, 589822, 0, 1, 589823, 0, 1, 524288, 0, 1, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 1, 524293, 0, 1, 524294, 0, 1, 524295, 0, 1, 524296, 0, 1, 524297, 0, 131078, 524298, 0, 65537, 524299, 0, 65537, 524300, 0, 65538, 655357, 0, 131072, 655358, 0, 131073, 655359, 0, 131073, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131073, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131073, 589833, 0, 131073, 589834, 0, 131073, 589835, 0, 65542, 589836, 0, 65538, 655371, 0, 65536, 655372, 0, 65538, 720907, 0, 65536, 720908, 0, 65538, 786443, 0, 65536, 786444, 0, 65538, 851979, 0, 65536, 851980, 0, 65538, 917515, 0, 65536, 917516, 0, 65538, 983051, 0, 131072, 983052, 0, 131074, 1245192, 0, 196608, 1245193, 0, 196609, 1245194, 0, 196609, 1245195, 0, 196609, 1245196, 0, 196609, 1245197, 0, 196609, 1245198, 0, 196609, 1245199, 0, 196609, 1245200, 0, 196610 )
+tile_data = PoolIntArray( -65527, 0, 0, -65526, 0, 2, 9, 0, 65536, 10, 0, 65538, 65536, 0, 0, 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 1, 65541, 0, 1, 65542, 0, 1, 65543, 0, 1, 65544, 0, 1, 65545, 0, 131078, 65546, 0, 65538, 131072, 0, 131072, 131073, 0, 131073, 131074, 0, 131073, 131075, 0, 131073, 131076, 0, 131073, 131077, 0, 131073, 131078, 0, 131073, 131079, 0, 131073, 131080, 0, 131073, 131081, 0, 65542, 131082, 0, 65538, 196617, 0, 65536, 196618, 0, 65538, 262153, 0, 65536, 262154, 0, 65538, 327689, 0, 65536, 327690, 0, 65538, 327702, 0, 0, 327703, 0, 1, 327704, 0, 1, 327705, 0, 2, 393225, 0, 65536, 393226, 0, 131077, 393227, 0, 1, 393228, 0, 1, 393229, 0, 1, 393230, 0, 1, 393231, 0, 1, 393232, 0, 1, 393233, 0, 1, 393234, 0, 1, 393235, 0, 1, 393236, 0, 1, 393237, 0, 1, 393238, 0, 131078, 393239, 0, 65537, 393240, 0, 65537, 393241, 0, 65538, 458761, 0, 65536, 458762, 0, 65537, 458763, 0, 65537, 458764, 0, 65541, 458765, 0, 131073, 458766, 0, 131073, 458767, 0, 131073, 458768, 0, 131073, 458769, 0, 131073, 458770, 0, 131073, 458771, 0, 131073, 458772, 0, 131073, 458773, 0, 131073, 458774, 0, 131073, 458775, 0, 131073, 458776, 0, 131073, 458777, 0, 131074, 589821, 0, 0, 589822, 0, 1, 589823, 0, 1, 524288, 0, 1, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 1, 524293, 0, 1, 524294, 0, 1, 524295, 0, 1, 524296, 0, 1, 524297, 0, 131078, 524298, 0, 65537, 524299, 0, 65537, 524300, 0, 65538, 655357, 0, 131072, 655358, 0, 131073, 655359, 0, 131073, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131073, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131073, 589833, 0, 131073, 589834, 0, 131073, 589835, 0, 65542, 589836, 0, 65538, 589841, 0, 196608, 589842, 0, 6, 589843, 0, 1, 589844, 0, 1, 589845, 0, 1, 589846, 0, 2, 655371, 0, 65536, 655372, 0, 65538, 655378, 0, 131072, 655379, 0, 131073, 655380, 0, 65542, 655381, 0, 65537, 655382, 0, 131077, 655383, 0, 1, 655384, 0, 2, 720907, 0, 65536, 720908, 0, 65538, 720916, 0, 131072, 720917, 0, 131073, 720918, 0, 131073, 720919, 0, 131073, 720920, 0, 196613, 720921, 0, 196610, 786443, 0, 65536, 786444, 0, 65538, 851979, 0, 65536, 851980, 0, 65538, 917515, 0, 65536, 917516, 0, 65538, 983051, 0, 131072, 983052, 0, 131074, 1245192, 0, 196608, 1245193, 0, 196609, 1245194, 0, 196609, 1245195, 0, 196609, 1245196, 0, 196609, 1245197, 0, 196609, 1245198, 0, 196609, 1245199, 0, 196609, 1245200, 0, 196610 )
 
 [node name="CliffTilemap" type="TileMap" parent="Layer 0"]
 position = Vector2( 16, 0 )
@@ -85,10 +88,8 @@ position = Vector2( 120.126, 59.2378 )
 [node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
 position = Vector2( 56, 40.7937 )
 
-[node name="Bat" parent="Layer 0/YSort" instance=ExtResource( 12 )]
-position = Vector2( 161, 72 )
-collision_layer = 2
-collision_mask = 2
+[node name="Bat" parent="Layer 0/YSort" instance=ExtResource( 13 )]
+position = Vector2( 146.444, 63.0173 )
 
 [node name="AreaTeleporterPosition" parent="Layer 0" instance=ExtResource( 8 )]
 position = Vector2( 157.632, 8 )
@@ -100,13 +101,23 @@ location = Vector2( 9, 9 )
 [node name="CollisionShape2D" parent="Layer 0/AreaTeleporterPosition" index="1"]
 shape = SubResource( 1 )
 
-[node name="PlayerDetector" parent="Layer 0" instance=ExtResource( 3 )]
+[node name="AreaTeleporterDestination" parent="Layer 0" instance=ExtResource( 3 )]
 position = Vector2( 0, 144 )
 
-[node name="CollisionShape2D" parent="Layer 0/PlayerDetector" index="0"]
+[node name="CollisionShape2D" parent="Layer 0/AreaTeleporterDestination" index="0"]
 shape = SubResource( 2 )
 
-[node name="Teleporter" parent="Layer 0/PlayerDetector" index="1"]
+[node name="Teleporter" parent="Layer 0/AreaTeleporterDestination" index="1"]
+target_scene_path = "res://Maps/Tests/Test2.tscn"
+destination = "test"
+
+[node name="LookInteractionBox" parent="Layer 0" instance=ExtResource( 12 )]
+
+[node name="CollisionShape2D" parent="Layer 0/LookInteractionBox" index="0"]
+position = Vector2( 96, 23.7719 )
+shape = SubResource( 3 )
+
+[node name="TeleporterDestination" parent="Layer 0/LookInteractionBox" index="1"]
 target_scene_path = "res://Maps/Tests/Test2.tscn"
 destination = "test"
 
@@ -118,9 +129,10 @@ z_index = 1
 [node name="test_tool" type="Sprite" parent="."]
 visible = false
 position = Vector2( 151, 40 )
-rotation = 56723.0
+rotation = 94483.2
 texture = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [editable path="Layer 0/AreaTeleporterPosition"]
-[editable path="Layer 0/PlayerDetector"]
+[editable path="Layer 0/AreaTeleporterDestination"]
+[editable path="Layer 0/LookInteractionBox"]

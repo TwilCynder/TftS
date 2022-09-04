@@ -5,7 +5,9 @@ class_name Stats
 signal no_hp
 
 export (int) var max_hp = 1
-onready var hp = max_hp setget set_hp
+export (int) var deceleration = 200
+
+onready var hp: int = max_hp setget set_hp
 
 func set_hp(hp_: int):
 	hp = hp_

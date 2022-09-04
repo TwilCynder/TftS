@@ -1,10 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Enemies/Bat.png" type="Texture" id=1]
-[ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=2]
-[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Enemies/Bat.gd" type="Script" id=4]
-[ext_resource path="res://Enemies/Stats.gd" type="Script" id=5]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Bat.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -34,42 +32,31 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 5.43893
-height = 0.0
+[sub_resource type="CircleShape2D" id=7]
+radius = 6.0
 
 [sub_resource type="CapsuleShape2D" id=8]
-radius = 7.09073
-height = 4.02929
+radius = 7.40063
+height = 4.85799
 
-[node name="Bat" type="KinematicBody2D"]
-script = ExtResource( 4 )
+[node name="Bat" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 6 )
 animation = "Fly"
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( 0, -12 )
 
-[node name="Shadow" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.235962, 0 )
+[node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 7 )
 
-[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
-position = Vector2( -0.235977, -9.67472 )
-
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( -0.235962, -4.01146 )
+position = Vector2( 0, -11.8777 )
 shape = SubResource( 8 )
 
-[node name="Stats" type="Node" parent="."]
-script = ExtResource( 5 )
+[node name="Stats" parent="." index="3"]
 max_hp = 2
-
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
