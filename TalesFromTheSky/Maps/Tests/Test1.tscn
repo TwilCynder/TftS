@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://World/tutorial/Grass.tscn" type="PackedScene" id=7]
 [ext_resource path="res://MapElements/TeleporterPosition.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
-[ext_resource path="res://Scripts/test_tool.gd" type="Script" id=11]
+[ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=10]
 [ext_resource path="res://MapElements/InteractionTeleporterDestination.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
 
@@ -126,12 +125,8 @@ z_index = 1
 
 [node name="YSort" type="YSort" parent="Layer 1"]
 
-[node name="test_tool" type="Sprite" parent="."]
-visible = false
-position = Vector2( 151, 40 )
-rotation = 56892.7
-texture = ExtResource( 10 )
-script = ExtResource( 11 )
+[node name="MapBounds" type="Node2D" parent="."]
+script = ExtResource( 10 )
 
 [editable path="Layer 0/AreaTeleporterPosition"]
 [editable path="Layer 0/AreaTeleporterDestination"]
