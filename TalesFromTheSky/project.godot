@@ -59,7 +59,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/NodeIterator.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "MapEntity",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"

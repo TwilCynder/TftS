@@ -127,6 +127,7 @@ z_index = 1
 
 [node name="MapBounds" type="Node2D" parent="."]
 script = ExtResource( 10 )
+size = Vector2( 1000, 1000 )
 
 [editable path="Layer 0/AreaTeleporterPosition"]
 [editable path="Layer 0/AreaTeleporterDestination"]
