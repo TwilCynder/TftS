@@ -964,4 +964,6 @@ disabled = true
 [node name="CenterArea" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 1.96686 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [editable path="HitboxPivot/Swordhitbox"]

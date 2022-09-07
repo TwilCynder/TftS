@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=10]
 [ext_resource path="res://MapElements/InteractionTeleporterDestination.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -87,6 +89,12 @@ position = Vector2( 120.126, 59.2378 )
 [node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
 position = Vector2( 56, 40.7937 )
 
+[node name="AnimationTree" parent="Layer 0/YSort/Player" index="3"]
+parameters/playback = SubResource( 4 )
+
+[node name="Camera2D" parent="Layer 0/YSort/Player" index="6"]
+current = true
+
 [node name="Bat" parent="Layer 0/YSort" instance=ExtResource( 13 )]
 position = Vector2( 146.444, 63.0173 )
 
@@ -129,6 +137,8 @@ z_index = 1
 script = ExtResource( 10 )
 size = Vector2( 1000, 1000 )
 
+[editable path="Layer 0/YSort/Player"]
+[editable path="Layer 0/YSort/Player/HitboxPivot/Swordhitbox"]
 [editable path="Layer 0/AreaTeleporterPosition"]
 [editable path="Layer 0/AreaTeleporterDestination"]
 [editable path="Layer 0/LookInteractionBox"]
