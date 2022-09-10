@@ -965,5 +965,6 @@ disabled = true
 position = Vector2( 0, 1.96686 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
 [editable path="HitboxPivot/Swordhitbox"]
