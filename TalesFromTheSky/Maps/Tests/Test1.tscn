@@ -92,9 +92,6 @@ position = Vector2( 56, 40.7937 )
 [node name="AnimationTree" parent="Layer 0/YSort/Player" index="3"]
 parameters/playback = SubResource( 1 )
 
-[node name="Camera2D" parent="Layer 0/YSort/Player" index="6"]
-current = true
-
 [node name="Bat" parent="Layer 0/YSort" instance=ExtResource( 13 )]
 position = Vector2( 146.444, 63.0173 )
 
