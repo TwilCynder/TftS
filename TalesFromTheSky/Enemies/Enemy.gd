@@ -44,7 +44,7 @@ func _physics_process(delta):
 		FREE:
 			check_death()
 
-func get_hit(hitbox: Hitbox):
+func get_hit(hitbox: Hitbox, hurtbox: Hurtbox):
 	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
 		stats.decrease_hp()
 		if hitbox.knockback and hitbox.knockback != Vector2.ZERO:
@@ -52,5 +52,5 @@ func get_hit(hitbox: Hitbox):
 		else:
 			check_death()
 
-func _on_Hurtbox_hit(hitbox):
-	get_hit(hitbox)
+func _on_Hurtbox_hit(hitbox, hurtbox):
+	get_hit(hitbox, hurtbox)

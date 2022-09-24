@@ -10,6 +10,7 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Hurtbox" parent="." instance=ExtResource( 1 )]
+enable_sparkle = true
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource( 2 )

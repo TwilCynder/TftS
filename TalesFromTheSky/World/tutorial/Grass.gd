@@ -11,7 +11,7 @@ func create_cut_effect():
 func _process(delta):
 	pass
 
-func _on_Hurtbox_hit(hitbox: Hitbox):
+func _on_Hurtbox_hit(hitbox: Hitbox, hurtbox: Hurtbox):
 	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
 		create_cut_effect()
 		queue_free()

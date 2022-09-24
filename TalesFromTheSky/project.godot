@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "AnimatedSprite",
+"class": "AnimatedEffect",
+"language": "GDScript",
+"path": "res://Effects/AnimatedEffect.gd"
+}, {
 "base": "Area2D",
 "class": "CenterArea",
 "language": "GDScript",
@@ -19,10 +24,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://MapElements/Destination.gd"
 }, {
+"base": "Node2D",
+"class": "EditorOnly",
+"language": "GDScript",
+"path": "res://Utilitaries/EditorOnly.gd"
+}, {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
 "path": "res://Overlap/Hitbox.gd"
+}, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://Overlap/Hurtbox.gd"
 }, {
 "base": "Area2D",
 "class": "InteractionBox",
@@ -54,7 +69,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/NodeIterator.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "MapEntity",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
@@ -90,9 +105,12 @@ _global_script_classes=[ {
 "path": "res://Scripts/test_tool.gd"
 } ]
 _global_script_class_icons={
+"AnimatedEffect": "",
 "CenterArea": "",
 "Destination": "",
+"EditorOnly": "",
 "Hitbox": "",
+"Hurtbox": "",
 "InteractionBox": "",
 "LookInteractionBox": "",
 "Map": "",
