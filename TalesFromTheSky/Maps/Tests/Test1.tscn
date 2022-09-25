@@ -89,9 +89,6 @@ position = Vector2( 120.126, 59.2378 )
 
 [node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
 position = Vector2( 56, 40.7937 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimationTree" parent="Layer 0/YSort/Player" index="3"]
 parameters/playback = SubResource( 1 )
@@ -128,9 +125,6 @@ destination = "test"
 
 [node name="Bat" parent="Layer 0" instance=ExtResource( 13 )]
 position = Vector2( 159, 69 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Layer 1" type="Node2D" parent="."]
 z_index = 1
