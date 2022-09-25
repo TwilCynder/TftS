@@ -8,3 +8,7 @@ func _ready():
 
 func _on_animation_finished():
 	queue_free()
+	
+static func displayEffect(effect: AnimatedEffect, position: Vector2):
+	effect.position = position;
+	SceneManager.current_scene.add_child(effect)

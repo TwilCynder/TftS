@@ -1,4 +1,4 @@
-extends "res://Enemies/Enemy.gd"
+extends Enemy
 
 func _ready():
 	enemy_type = "Bat"
