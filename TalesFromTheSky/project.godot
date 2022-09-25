@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://Overlap/Hitbox.gd"
 }, {
 "base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://Overlap/Hurtbox.gd"
+}, {
+"base": "Area2D",
 "class": "InteractionBox",
 "language": "GDScript",
 "path": "res://MapElements/InteractionBox.gd"
@@ -99,6 +104,7 @@ _global_script_class_icons={
 "CenterArea": "",
 "Destination": "",
 "Hitbox": "",
+"Hurtbox": "",
 "InteractionBox": "",
 "LookInteractionBox": "",
 "Map": "",
