@@ -34,16 +34,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://MapElements/Destination.gd"
 }, {
-"base": "Node2D",
-"class": "EditorOnly",
-"language": "GDScript",
-"path": "res://Utilitaries/EditorOnly.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://Enemies/Enemy.gd"
-}, {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
@@ -125,8 +115,6 @@ _global_script_class_icons={
 "CenterArea": "",
 "ChasingAI": "",
 "Destination": "",
-"EditorOnly": "",
-"Enemy": "",
 "Hitbox": "",
 "Hurtbox": "",
 "InteractionBox": "",
