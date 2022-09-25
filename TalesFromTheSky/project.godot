@@ -50,11 +50,6 @@ _global_script_classes=[ {
 "path": "res://Overlap/Hitbox.gd"
 }, {
 "base": "Area2D",
-"class": "Hurtbox",
-"language": "GDScript",
-"path": "res://Overlap/Hurtbox.gd"
-}, {
-"base": "Area2D",
 "class": "InteractionBox",
 "language": "GDScript",
 "path": "res://MapElements/InteractionBox.gd"
@@ -84,7 +79,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/NodeIterator.gd"
 }, {
-"base": "MapEntity",
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
@@ -128,7 +123,6 @@ _global_script_class_icons={
 "EditorOnly": "",
 "Enemy": "",
 "Hitbox": "",
-"Hurtbox": "",
 "InteractionBox": "",
 "LookInteractionBox": "",
 "Map": "",
