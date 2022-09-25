@@ -15,3 +15,4 @@ func _ready():
 	if Engine.editor_hint: return
 	var SceneManager = get_node("/root/SceneManager")
 	SceneManager.current_scene.add_destination(self, dest_name, default)
+	add_to_group("destinations")
