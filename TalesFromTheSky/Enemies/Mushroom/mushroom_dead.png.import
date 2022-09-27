@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky_background.png-b01a8ed01530af81c5fc270c8d470a62.stex"
+path="res://.import/mushroom_dead.png-8fa726b9ea6aff45518ebe2796bf9ae2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/Backgrounds/sky_background.png"
-dest_files=[ "res://.import/sky_background.png-b01a8ed01530af81c5fc270c8d470a62.stex" ]
+source_file="res://Enemies/Mushroom/mushroom_dead.png"
+dest_files=[ "res://.import/mushroom_dead.png-8fa726b9ea6aff45518ebe2796bf9ae2.stex" ]
 
 [params]
 
