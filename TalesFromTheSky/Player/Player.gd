@@ -2,7 +2,8 @@ extends MapEntity
 
 enum {
 	FREE,
-	ATTACK
+	ATTACK,
+	KNOCKBACK
 }
 
 class_name Player

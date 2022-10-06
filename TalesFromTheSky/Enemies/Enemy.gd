@@ -20,7 +20,7 @@ var enemy_type = "Generic enemy"
 onready var stats = $Stats
 
 var DeathEffect = preload("res://Effects/EnemyDeath.tscn")
-var AI = load("res://Enemies/basic_AI.gd")
+var AI = load("res://Enemies/AI/basic_AI.gd")
 
 var ai: AI
 
@@ -63,7 +63,6 @@ func _physics_process(delta):
 			current_speed = move_and_slide(current_speed)
 		FREE:
 			ai.physics_process(delta)
-			print(current_speed)
 			current_speed = move_and_slide(current_speed)
 			check_death()
 		

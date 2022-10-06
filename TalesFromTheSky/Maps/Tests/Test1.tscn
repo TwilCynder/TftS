@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
@@ -10,18 +10,13 @@
 [ext_resource path="res://MapElements/TeleporterPosition.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=10]
-[ext_resource path="res://MapElements/InteractionTeleporterDestination.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 16 )
-
-[sub_resource type="RectangleShape2D" id=4]
 
 [node name="World" type="Node2D"]
 position = Vector2( 0, -8 )
@@ -90,9 +85,6 @@ position = Vector2( 120.126, 59.2378 )
 [node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
 position = Vector2( 56, 40.7937 )
 
-[node name="AnimationTree" parent="Layer 0/YSort/Player" index="3"]
-parameters/playback = SubResource( 1 )
-
 [node name="AreaTeleporterPosition" parent="Layer 0" instance=ExtResource( 8 )]
 position = Vector2( 157.632, 8 )
 
@@ -113,16 +105,6 @@ shape = SubResource( 3 )
 target_scene_path = "res://Maps/Tests/Test2.tscn"
 destination = "test"
 
-[node name="LookInteractionBox" parent="Layer 0" instance=ExtResource( 12 )]
-
-[node name="CollisionShape2D" parent="Layer 0/LookInteractionBox" index="0"]
-position = Vector2( 96, 23.7719 )
-shape = SubResource( 4 )
-
-[node name="TeleporterDestination" parent="Layer 0/LookInteractionBox" index="1"]
-target_scene_path = "res://Maps/Tests/Test2.tscn"
-destination = "test"
-
 [node name="Bat" parent="Layer 0" instance=ExtResource( 13 )]
 position = Vector2( 159, 69 )
 
@@ -135,8 +117,5 @@ z_index = 1
 script = ExtResource( 10 )
 size = Vector2( 1000, 1000 )
 
-[editable path="Layer 0/YSort/Player"]
-[editable path="Layer 0/YSort/Player/HitboxPivot/Swordhitbox"]
 [editable path="Layer 0/AreaTeleporterPosition"]
 [editable path="Layer 0/AreaTeleporterDestination"]
-[editable path="Layer 0/LookInteractionBox"]

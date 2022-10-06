@@ -4,7 +4,8 @@ class_name Hitbox
 
 enum HitboxType {
 	NONE,
-	SWORD
+	SWORD,
+	ENEMY_BASIC_ATTACK
 }
 
 var knockback = null
