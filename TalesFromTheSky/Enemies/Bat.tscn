@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleShape2D" id=8]
 radius = 7.40063
-height = 4.85799
+height = 0.0
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -50,25 +50,37 @@ collision_mask = 6
 script = ExtResource( 3 )
 
 [node name="ScalarKnockbackHitbox" type="Area2D" parent="." index="0"]
+position = Vector2( 0, -16 )
+collision_layer = 8
+collision_mask = 17
 script = ExtResource( 5 )
-knockback_ = 10.0
+__meta__ = {
+"_editor_description_": "Bat's hitbox"
+}
+hitboxType = 2
+knockback_ = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScalarKnockbackHitbox" index="0"]
-position = Vector2( 0, -11.8777 )
+position = Vector2( 0, 1.1223 )
 shape = SubResource( 8 )
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 6 )
 animation = "Fly"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 7 )
 
+[node name="Hurtbox" parent="." index="3"]
+visible = false
+position = Vector2( 0, -15 )
+hit_by = 1
+
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 0, -11.8777 )
+position = Vector2( 0, -0.8777 )
 shape = SubResource( 8 )
 
 [node name="Stats" parent="." index="4"]
@@ -76,6 +88,9 @@ max_hp = 10
 
 [node name="AI" parent="." index="5" instance=ExtResource( 4 )]
 visible = false
+
+[node name="PlayerDetector" parent="AI" index="0"]
+collision_layer = 0
 
 [node name="CollisionShape2D" parent="AI/PlayerDetector" index="0"]
 shape = SubResource( 9 )
