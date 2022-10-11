@@ -111,37 +111,7 @@ func free_state(delta):
 func get_direction()->Vector2:
 	return direction
 		
-##==== THE DIRTY AND POSSIBLY MORE EFFICIENT WAY (ok i don't think it is)
-#func free_state(delta):
-#	input_vector = Vector2.ZERO
-#	if Input.is_action_pressed("ui_right"):
-#		direction = "Right"
-#		input_vector.x += 1
-#	if Input.is_action_pressed("ui_left"):
-#		direction = "Left"
-#		input_vector.x -= 1
-#
-#	if Input.is_action_pressed("ui_up"):
-#		direction = "Up"
-#		input_vector.y -= 1
-#	if Input.is_action_pressed("ui_down"):
-#		direction = "Down"
-#		input_vector.y += 1
-#
-#	input_vector.normalized()
-#
-#	if input_vector == Vector2.ZERO:
-#		animationPlayer.play("Idle" + direction)
-#		velocity = Vector2.ZERO
-#	else:
-#		animationPlayer.play("Run_" + direction)
-#
-#		#velocity = velocity.move_toward(input_vector * WALK_SPEED, ACCELERATION * delta)
-#		velocity = input_vector * WALK_SPEED
-#
-#	move_and_slide(velocity)
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func _on_Hurtbox_hit(hitbox, hurtbox):
+	pass

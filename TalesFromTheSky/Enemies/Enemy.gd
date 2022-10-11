@@ -68,12 +68,12 @@ func _physics_process(delta):
 		
 
 func get_hit(hitbox: Hitbox, hurtbox: Hurtbox):
-	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
-		stats.decrease_hp()
-		if hitbox.knockback and hitbox.knockback != Vector2.ZERO:
-			start_knockback(hitbox.knockback * 100)
-		else:
-			check_death()
+	stats.decrease_hp()
+	if hitbox.knockback and hitbox.knockback != Vector2.ZERO:
+		start_knockback(hitbox.knockback * 100)
+	else:
+		check_death()
 
 func _on_Hurtbox_hit(hitbox, hurtbox):
-	get_hit(hitbox, hurtbox)
+	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
+		get_hit(hitbox, hurtbox)

@@ -4,7 +4,11 @@
 [ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Bat.gd" type="Script" id=3]
 [ext_resource path="res://Enemies/AI/chasing_AI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Overlap/Hitbox.gd" type="Script" id=5]
+[ext_resource path="res://Overlap/ScalarKnockbackHitbox.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 7.40063
+height = 4.85799
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -37,10 +41,6 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=7]
 radius = 6.0
 
-[sub_resource type="CapsuleShape2D" id=8]
-radius = 7.40063
-height = 4.85799
-
 [sub_resource type="CircleShape2D" id=9]
 radius = 73.0274
 
@@ -49,23 +49,23 @@ collision_layer = 2
 collision_mask = 6
 script = ExtResource( 3 )
 
-[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+[node name="ScalarKnockbackHitbox" type="Area2D" parent="." index="0"]
+script = ExtResource( 5 )
+knockback_ = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScalarKnockbackHitbox" index="0"]
+position = Vector2( 0, -11.8777 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 6 )
 animation = "Fly"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 0, -12 )
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 7 )
-
-[node name="Hitbox" type="Area2D" parent="." index="2"]
-script = ExtResource( 5 )
-hitboxType = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0, -11.8777 )
-shape = SubResource( 8 )
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -11.8777 )
