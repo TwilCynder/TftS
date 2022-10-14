@@ -11,6 +11,7 @@ enum {
 } #An enemy that has more states should extend this enmu using `enum {MYSTATE = STATES, ...}` 
 #wow j'ai vraiment inventé ça ? si c'est le cas gg twil d'il y a 2 semaines
 
+
 var state = FREE
 var current_speed: Vector2 = Vector2.ZERO
 
@@ -19,7 +20,7 @@ var enemy_type = "Generic enemy"
 onready var stats = $Stats
 
 var DeathEffect = preload("res://Effects/EnemyDeath.tscn")
-var AI = load("res://Enemies/basic_AI.gd")
+var AI = load("res://Enemies/AI/basic_AI.gd")
 
 var ai: AI
 
@@ -62,18 +63,17 @@ func _physics_process(delta):
 			current_speed = move_and_slide(current_speed)
 		FREE:
 			ai.physics_process(delta)
-			print(current_speed)
 			current_speed = move_and_slide(current_speed)
 			check_death()
 		
 
 func get_hit(hitbox: Hitbox, hurtbox: Hurtbox):
-	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
-		stats.decrease_hp()
-		if hitbox.knockback and hitbox.knockback != Vector2.ZERO:
-			start_knockback(hitbox.knockback * 100)
-		else:
-			check_death()
+	stats.decrease_hp()
+	if hitbox.knockback and hitbox.knockback != Vector2.ZERO:
+		start_knockback(hitbox.knockback * 100)
+	else:
+		check_death()
 
 func _on_Hurtbox_hit(hitbox, hurtbox):
-	get_hit(hitbox, hurtbox)
+	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
+		get_hit(hitbox, hurtbox)

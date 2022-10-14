@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Player/Character/heros_stand_toutes directions.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Player/Character/heros_attaque base_gauche.png" type="Texture" id=10]
 [ext_resource path="res://Player/Character/heros_attaque base_droite.png" type="Texture" id=11]
 [ext_resource path="res://Player/Character/heros_attaque base_dos.png" type="Texture" id=12]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Player/Character/heros_hit_and_get_up.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AttackDown"
@@ -473,6 +475,46 @@ tracks/8/keys = {
 "values": [ 9.07374 ]
 }
 
+[sub_resource type="Animation" id=38]
+resource_name = "HurtLeft"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlayerSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlayerSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
 [sub_resource type="Animation" id=5]
 length = 0.1
 loop = true
@@ -631,6 +673,45 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlayerSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlayerSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -836,6 +917,9 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "HurtLeft"
+
 [sub_resource type="AnimationNodeAnimation" id=20]
 animation = "IdleLeft"
 
@@ -894,14 +978,20 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
 [sub_resource type="AnimationNodeStateMachine" id=34]
 states/Attack/node = SubResource( 19 )
 states/Attack/position = Vector2( 462, 185 )
+states/HurtLeft/node = SubResource( 40 )
+states/HurtLeft/position = Vector2( 289.667, 103.788 )
 states/Idle/node = SubResource( 24 )
 states/Idle/position = Vector2( 462, 104 )
 states/Run/node = SubResource( 29 )
 states/Run/position = Vector2( 629, 104 )
-transitions = [ "Idle", "Run", SubResource( 30 ), "Run", "Idle", SubResource( 31 ), "Idle", "Attack", SubResource( 32 ), "Attack", "Idle", SubResource( 33 ) ]
+transitions = [ "Idle", "Run", SubResource( 30 ), "Run", "Idle", SubResource( 31 ), "Idle", "Attack", SubResource( 32 ), "Attack", "Idle", SubResource( 33 ), "HurtLeft", "Idle", SubResource( 41 ), "Idle", "HurtLeft", SubResource( 42 ) ]
 start_node = "Idle"
 graph_offset = Vector2( 0, 25.7592 )
 
@@ -909,26 +999,32 @@ graph_offset = Vector2( 0, 25.7592 )
 
 [sub_resource type="CapsuleShape2D" id=36]
 radius = 4.45667
-height = 9.06667
+height = 11.1101
+
+[sub_resource type="CapsuleShape2D" id=37]
+radius = 8.0
+height = 14.0
 
 [node name="Player" type="KinematicBody2D"]
-collision_mask = 5
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
 position = Vector2( 0, -9 )
-texture = ExtResource( 9 )
-hframes = 2
+texture = ExtResource( 14 )
+hframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 1 )
 anims/AttackLeft = SubResource( 2 )
 anims/AttackRight = SubResource( 3 )
 anims/AttackUp = SubResource( 4 )
+anims/HurtLeft = SubResource( 38 )
 anims/IdleDown = SubResource( 5 )
 anims/IdleLeft = SubResource( 6 )
 anims/IdleRight = SubResource( 7 )
 anims/IdleUp = SubResource( 8 )
+anims/RESET = SubResource( 39 )
 anims/RunRighhhhht = SubResource( 9 )
 anims/Run_Down = SubResource( 10 )
 anims/Run_Left = SubResource( 11 )
@@ -953,11 +1049,10 @@ position = Vector2( 0, -4 )
 rotation = 4.71239
 
 [node name="Swordhitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
-position = Vector2( -2.23286, -8.61816 )
+position = Vector2( 6.49797, 6.24785 )
 hitboxType = 1
 
 [node name="CollisionShape2D" parent="HitboxPivot/Swordhitbox" index="0"]
-rotation = 1.5708
 shape = SubResource( 36 )
 disabled = true
 
@@ -967,4 +1062,20 @@ position = Vector2( 0, 1.96686 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
+[node name="Hurtbox" parent="." instance=ExtResource( 13 )]
+position = Vector2( 0, -6 )
+collision_layer = 1
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": "Player's main hurtbox"
+}
+hit_by = 2
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 37 )
+
+[connection signal="hit" from="Hurtbox" to="." method="_on_Hurtbox_hit"]
+
 [editable path="HitboxPivot/Swordhitbox"]
+[editable path="Hurtbox"]

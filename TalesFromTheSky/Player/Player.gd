@@ -2,7 +2,8 @@ extends MapEntity
 
 enum {
 	FREE,
-	ATTACK
+	ATTACK,
+	KNOCKBACK
 }
 
 class_name Player
@@ -39,8 +40,9 @@ func _ready():
 	
 	animationTree.active = true
 	
-const WALK_SPEED = 100
-var ACCELERATION = 200
+const WALK_SPEED: int = 100
+const ACCELERATION: int = 200
+const traction: int = 2000
 
 var state = FREE
 var velocity = Vector2.ZERO #Current move speed (input_vector * WALK_SPEED when moving in FREE state)
@@ -55,16 +57,47 @@ func is_looking_towards(point: Vector2)->bool:
 	return Util.is_similar_direction4(direction, point - position)
 
 func start_state_attack():
-	state = ATTACK
 	setAnimation("Attack")
 	swordHitbox.knockback = direction
 
 func start_state_free():
-	state = FREE
+	pass
+	
+func start_state_knockback():
+	setAnimation("HurtLeft")
 
 func attack_animation_finished():
-	start_state_free()
+	setState(FREE)
 	swordHitbox.knockback = null
+
+func exit_state_free():
+	pass
+	
+func exit_state_attack():
+	swordHitbox.set_enabled(false)
+	
+func exit_state_knockback():
+	pass
+	
+func exit_current_state():
+	match state:
+		FREE:
+			exit_state_free()
+		ATTACK:
+			exit_state_attack()
+		KNOCKBACK:
+			exit_state_knockback()
+
+func setState(state_):
+	match state_:
+		FREE:
+			start_state_free()
+		ATTACK:
+			start_state_attack()
+		KNOCKBACK:
+			start_state_knockback()
+			
+	state = state_
 
 func _process(delta: float):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -76,6 +109,8 @@ func _physics_process(delta: float):
 			free_state(delta)
 		ATTACK:
 			attack_state(delta)
+		KNOCKBACK:
+			knockback_state(delta)
 		
 func attack_state(delta):
 	pass
@@ -88,6 +123,14 @@ func setAnimDirection(input_vector):
 	animationTree.set("parameters/Idle/blend_position", input_vector)
 	animationTree.set("parameters/Run/blend_position", input_vector)
 	animationTree.set("parameters/Attack/blend_position", input_vector)
+		
+func knockback_state(delta):
+	velocity = velocity.move_toward(Vector2.ZERO, traction * delta)
+	if velocity == Vector2.ZERO:
+		setState(FREE)
+		return
+			
+	velocity = move_and_slide(velocity)
 		
 func free_state(delta):
 	#==== THE SHORT AND SIMPLE WAY
@@ -105,42 +148,12 @@ func free_state(delta):
 	move_and_slide(velocity)
 
 	if Input.is_action_just_pressed("attack"):
-		start_state_attack()
+		setState(ATTACK)
 		
 func get_direction()->Vector2:
 	return direction
 		
-##==== THE DIRTY AND POSSIBLY MORE EFFICIENT WAY (ok i don't think it is)
-#func free_state(delta):
-#	input_vector = Vector2.ZERO
-#	if Input.is_action_pressed("ui_right"):
-#		direction = "Right"
-#		input_vector.x += 1
-#	if Input.is_action_pressed("ui_left"):
-#		direction = "Left"
-#		input_vector.x -= 1
-#
-#	if Input.is_action_pressed("ui_up"):
-#		direction = "Up"
-#		input_vector.y -= 1
-#	if Input.is_action_pressed("ui_down"):
-#		direction = "Down"
-#		input_vector.y += 1
-#
-#	input_vector.normalized()
-#
-#	if input_vector == Vector2.ZERO:
-#		animationPlayer.play("Idle" + direction)
-#		velocity = Vector2.ZERO
-#	else:
-#		animationPlayer.play("Run_" + direction)
-#
-#		#velocity = velocity.move_toward(input_vector * WALK_SPEED, ACCELERATION * delta)
-#		velocity = input_vector * WALK_SPEED
-#
-#	move_and_slide(velocity)
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Hurtbox_hit(hitbox: Hitbox, hurtbox: Hurtbox):
+	var knockback: Vector2 = hitbox.computeEffectiveKnockback(hurtbox.global_position)
+	velocity = knockback
+	setState(KNOCKBACK)

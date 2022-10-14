@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "AI",
 "language": "GDScript",
-"path": "res://Enemies/basic_AI.gd"
+"path": "res://Enemies/AI/basic_AI.gd"
 }, {
 "base": "AnimatedSprite",
 "class": "AnimatedEffect",
@@ -24,15 +24,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/CenterArea.gd"
 }, {
-"base": "AI",
-"class": "ChasingAI",
-"language": "GDScript",
-"path": "res://Enemies/chasing_AI.gd"
-}, {
 "base": "Position2D",
 "class": "Destination",
 "language": "GDScript",
 "path": "res://MapElements/Destination.gd"
+}, {
+"base": "Node2D",
+"class": "EditorOnly",
+"language": "GDScript",
+"path": "res://Utilitaries/EditorOnly.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemies/Enemy.gd"
 }, {
 "base": "Area2D",
 "class": "Hitbox",
@@ -74,10 +79,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/NodeIterator.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "MapEntity",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Hitbox",
+"class": "ScalarKnockbackHitbox",
+"language": "GDScript",
+"path": "res://Overlap/ScalarKnockbackHitbox.gd"
 }, {
 "base": "Node",
 "class": "Stats",
@@ -104,6 +114,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Utilitaries/Util.gd"
 }, {
+"base": "Hitbox",
+"class": "VectorKnockbackHitbox",
+"language": "GDScript",
+"path": "res://Overlap/VectorKnockbackHitbox.gd"
+}, {
 "base": "Sprite",
 "class": "test_tool",
 "language": "GDScript",
@@ -113,8 +128,9 @@ _global_script_class_icons={
 "AI": "",
 "AnimatedEffect": "",
 "CenterArea": "",
-"ChasingAI": "",
 "Destination": "",
+"EditorOnly": "",
+"Enemy": "",
 "Hitbox": "",
 "Hurtbox": "",
 "InteractionBox": "",
@@ -124,11 +140,13 @@ _global_script_class_icons={
 "MapEntity": "",
 "NodeIterator": "",
 "Player": "",
+"ScalarKnockbackHitbox": "",
 "Stats": "",
 "TeleporterDestination": "",
 "TeleporterPosition": "",
 "TreeUtil": "",
 "Util": "",
+"VectorKnockbackHitbox": "",
 "test_tool": ""
 }
 
@@ -177,17 +195,17 @@ texture={
 
 attack={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
 [layer_names]
 
 2d_render/layer_1="Background"
-2d_physics/layer_1="Player"
 2d_render/layer_2="Player"
-2d_physics/layer_2="Enemy"
 2d_render/layer_3="Objects"
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
 2d_physics/layer_3="SolidEntity"
 2d_physics/layer_4="Hitboxes"
 2d_physics/layer_5="Hurtboxes"
