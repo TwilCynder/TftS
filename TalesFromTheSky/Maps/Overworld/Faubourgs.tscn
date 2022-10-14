@@ -59,6 +59,9 @@ tile_data = PoolIntArray( 196670, 79, 0, 196672, 79, 0, 196683, 79, 0, 262218, 7
 [node name="Bat" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1048, 136 )
 
+[node name="Sprite" parent="Bat" index="1"]
+frame = 2
+
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1440, 600 )
 
@@ -114,5 +117,7 @@ size = Vector2( 2240, 1680 )
 
 [editable path="Bat"]
 [editable path="Bat/Hurtbox"]
+[editable path="Bat/AI"]
+[editable path="Bat/AI/PlayerDetector"]
 [editable path="Teleporters/TP south entry"]
 [editable path="Teleporters/TP north entry"]

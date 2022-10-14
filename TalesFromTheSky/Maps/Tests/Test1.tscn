@@ -12,10 +12,10 @@
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=10]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 16 )
 
 [node name="World" type="Node2D"]
@@ -96,13 +96,13 @@ target_scene_path = "res://Maps/Tests/Test2.tscn"
 location = Vector2( 9, 9 )
 
 [node name="CollisionShape2D" parent="Layer 0/AreaTeleporterPosition" index="1"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AreaTeleporterDestination" parent="Layer 0" instance=ExtResource( 3 )]
 position = Vector2( 0, 144 )
 
 [node name="CollisionShape2D" parent="Layer 0/AreaTeleporterDestination" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Teleporter" parent="Layer 0/AreaTeleporterDestination" index="1"]
 target_scene_path = "res://Maps/Tests/Test2.tscn"
