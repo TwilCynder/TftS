@@ -89,9 +89,6 @@ position = Vector2( 120.126, 59.2378 )
 
 [node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
 position = Vector2( 56, 40.7937 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimationTree" parent="Layer 0/YSort/Player" index="3"]
 parameters/playback = SubResource( 1 )
@@ -127,10 +124,10 @@ target_scene_path = "res://Maps/Tests/Test2.tscn"
 destination = "test"
 
 [node name="Bat" parent="Layer 0" instance=ExtResource( 13 )]
-position = Vector2( 159, 69 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 160, 72 )
+
+[node name="Sprite" parent="Layer 0/Bat" index="0"]
+frame = 4
 
 [node name="Layer 1" type="Node2D" parent="."]
 z_index = 1
@@ -146,3 +143,5 @@ size = Vector2( 1000, 1000 )
 [editable path="Layer 0/AreaTeleporterPosition"]
 [editable path="Layer 0/AreaTeleporterDestination"]
 [editable path="Layer 0/LookInteractionBox"]
+[editable path="Layer 0/Bat"]
+[editable path="Layer 0/Bat/Hurtbox"]
