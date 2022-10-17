@@ -29,14 +29,15 @@ func _ready():
 	print("> Hello there ! (Player ready)")
 	
 	var root = SceneManager.current_scene
-	assert(root != null, "Can't find root node")
-	if root.get_hero():
-		if not allow_redundancy:
-			print("> Deleting this Player because the map already has a hero")
-			get_parent().remove_child(self)
-			queue_free()
-	else:
-		root.set_hero(self)
+	#assert(root != null, "Can't find root node")
+	if root is Map:	
+		if root.get_hero():
+			if not allow_redundancy:
+				print("> Deleting this Player because the map already has a hero")
+				get_parent().remove_child(self)
+				queue_free()
+		else:
+			root.set_hero(self)
 	
 	animationTree.active = true
 	

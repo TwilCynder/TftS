@@ -6,12 +6,21 @@ signal player_interact(hero)
 
 onready var _tree = get_tree()
 onready var transition_fade = $CanvasLayer/SceneTransitionRect
-onready var current_scene: Map = _tree.current_scene
+onready var current_scene: Map = get_current_scene()
 var hero: Player setget set_hero, get_hero
 onready var limbo = $Limbo
 
+func get_current_scene():
+	if _tree.current_scene is Map:
+		return _tree.current_scene
+	else:
+		return null
+
 func get_hero():
-	return current_scene.get_hero()
+	if current_scene == null:
+		return null
+	else:
+		return current_scene.get_hero()
 	
 func set_hero(hero: Player):
 	current_scene.set_hero(hero)
@@ -19,6 +28,8 @@ func set_hero(hero: Player):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("> SceneManager Ready")
+	if not (current_scene is Map):
+		print("WARNING : Current scene is not a map")
 
 func _enter_tree():
 	print("> SceneManager enters tree")
