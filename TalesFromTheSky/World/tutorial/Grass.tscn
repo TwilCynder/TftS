@@ -15,7 +15,7 @@ position = Vector2( 0, 8 )
 texture = ExtResource( 1 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
-hit_by = 1
+hit_by = [ 1 ]
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, 8 )
