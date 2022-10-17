@@ -6,39 +6,39 @@
 [ext_resource path="res://Enemies/AI/chasing_AI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Overlap/ScalarKnockbackHitbox.gd" type="Script" id=5]
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 7.40063
 height = 0.0
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 48, 0, 16, 24 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 0, 16, 24 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Fly",
 "speed": 10.0
 } ]
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=8]
 radius = 6.0
 
 [sub_resource type="CircleShape2D" id=9]
@@ -62,16 +62,17 @@ knockback_ = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScalarKnockbackHitbox" index="0"]
 position = Vector2( 0, 1.1223 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="1"]
-frames = SubResource( 6 )
+frames = SubResource( 7 )
 animation = "Fly"
+frame = 3
 playing = true
 offset = Vector2( 0, -12 )
 
 [node name="CollisionShape2D" parent="." index="2"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Hurtbox" parent="." index="3"]
 visible = false
@@ -79,10 +80,10 @@ position = Vector2( 0, -15 )
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -0.8777 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="Stats" parent="." index="4"]
-max_hp = 10
+max_hp = 2
 
 [node name="AI" parent="." index="5" instance=ExtResource( 4 )]
 visible = false
