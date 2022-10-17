@@ -1069,7 +1069,7 @@ __meta__ = {
 "_edit_group_": true,
 "_editor_description_": "Player's main hurtbox"
 }
-hit_by = 2
+hit_by = [ 2 ]
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -1 )

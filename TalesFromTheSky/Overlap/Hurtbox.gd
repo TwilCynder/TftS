@@ -6,7 +6,7 @@ signal hit(hitbox, hurtbox)
 
 export (bool) var enable_sparkle = false
 
-export (Hitbox.HitboxType) var hit_by = Hitbox.HitboxType.NONE
+export (Array, Hitbox.HitboxType) var hit_by: Array = []
 
 var HitEffect = preload("res://Effects/Hit.tscn")
 
@@ -24,8 +24,7 @@ func collision(hitbox: Hitbox):
 	emit_signal("hit", hitbox, self)
 
 func checkHit(hitbox: Hitbox):
-	
-	if (hitbox.hitboxType == hit_by):
+	if hit_by.empty() or (hitbox.hitboxType in hit_by):
 		collision(hitbox)
 
 func _on_Hurtbox_area_entered(area):

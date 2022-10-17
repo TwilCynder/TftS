@@ -11,6 +11,7 @@ script = ExtResource( 3 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 1 )]
 enable_sparkle = true
+hit_by = [ 1 ]
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource( 2 )

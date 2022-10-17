@@ -6,7 +6,8 @@ func _ready():
 	enemy_type = "Bat"
 
 func _process(delta):
-	sprite.flip_h = current_speed.x < 0
+	if state != KNOCKBACK:
+		sprite.flip_h = current_speed.x < 0
 
 func die():
 	position.y -= 8
