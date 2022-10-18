@@ -29,16 +29,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://MapElements/Destination.gd"
 }, {
-"base": "Node2D",
-"class": "EditorOnly",
-"language": "GDScript",
-"path": "res://Utilitaries/EditorOnly.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://Enemies/Enemy.gd"
-}, {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
@@ -79,7 +69,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/NodeIterator.gd"
 }, {
-"base": "MapEntity",
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
@@ -129,8 +119,6 @@ _global_script_class_icons={
 "AnimatedEffect": "",
 "CenterArea": "",
 "Destination": "",
-"EditorOnly": "",
-"Enemy": "",
 "Hitbox": "",
 "Hurtbox": "",
 "InteractionBox": "",
