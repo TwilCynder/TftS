@@ -43,7 +43,7 @@ func _ready():
 	
 const WALK_SPEED: int = 100
 const ACCELERATION: int = 200
-const traction: int = 4000
+const traction: int = 3000
 
 var state = FREE
 var velocity = Vector2.ZERO #Current move speed (input_vector * WALK_SPEED when moving in FREE state)

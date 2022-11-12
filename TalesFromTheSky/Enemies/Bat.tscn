@@ -58,7 +58,7 @@ __meta__ = {
 "_editor_description_": "Bat's hitbox"
 }
 hitboxType = 2
-knockback_ = 600.0
+knockback_ = 400.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScalarKnockbackHitbox" index="0"]
 position = Vector2( 0, 1.1223 )
@@ -87,6 +87,7 @@ max_hp = 2
 
 [node name="AI" parent="." index="5" instance=ExtResource( 4 )]
 visible = false
+chase_speed = 50
 
 [node name="PlayerDetector" parent="AI" index="0"]
 collision_layer = 0

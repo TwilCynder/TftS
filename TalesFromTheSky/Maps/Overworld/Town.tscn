@@ -32,9 +32,6 @@ margin_bottom = 752.0
 rect_pivot_offset = Vector2( 72, 224 )
 texture = ExtResource( 5 )
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Layer 1 (Sol)" type="TileMap" parent="Layer 1"]
 position = Vector2( 320, 0 )

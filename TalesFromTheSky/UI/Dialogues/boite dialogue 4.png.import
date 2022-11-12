@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/forest_tileset.png-d422e0ee97198d277a38bd3736af0a15.stex"
+path="res://.import/boite dialogue 4.png-2e76a610191bd75906f9c32c5626b866.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets (Secret of Mana)/forest_tileset.png"
-dest_files=[ "res://.import/forest_tileset.png-d422e0ee97198d277a38bd3736af0a15.stex" ]
+source_file="res://UI/Dialogues/boite dialogue 4.png"
+dest_files=[ "res://.import/boite dialogue 4.png-2e76a610191bd75906f9c32c5626b866.stex" ]
 
 [params]
 
