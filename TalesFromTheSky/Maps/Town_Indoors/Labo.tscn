@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://MapElements/Destination.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MapElements/TeleporterDestination.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MapElements/InteractionBox.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 16 )
@@ -21,9 +22,6 @@ margin_right = 960.0
 margin_bottom = 720.0
 texture = ExtResource( 3 )
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Layer 1 (Murs et sols)" type="TileMap" parent="Mapping"]
 tile_set = ExtResource( 4 )
@@ -57,5 +55,8 @@ destination = "Lab entrance"
 [node name="MapBounds" type="Node2D" parent="."]
 script = ExtResource( 2 )
 size = Vector2( 960, 720 )
+
+[node name="InteractionBox" type="Area2D" parent="."]
+script = ExtResource( 8 )
 
 [editable path="TP town"]
