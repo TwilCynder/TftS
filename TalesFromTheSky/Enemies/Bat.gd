@@ -12,4 +12,3 @@ func _process(delta):
 func die():
 	position.y -= 8
 	.die()
-	
