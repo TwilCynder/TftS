@@ -43,15 +43,15 @@ __meta__ = {
 [node name="Name" type="RichTextLabel" parent="Background"]
 margin_right = 64.0
 margin_bottom = 8.0
-text = "Test"
 fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Text" type="RichTextLabel" parent="Background"]
+margin_top = 16.0
 margin_right = 64.0
-margin_bottom = 8.0
+margin_bottom = 31.0
 text = "Test"
 fit_content_height = true
 __meta__ = {

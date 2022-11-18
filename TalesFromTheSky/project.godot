@@ -195,17 +195,17 @@ texture={
 
 attack={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
 
 [layer_names]
 
 2d_render/layer_1="Background"
-2d_render/layer_2="Player"
-2d_render/layer_3="Objects"
 2d_physics/layer_1="Player"
+2d_render/layer_2="Player"
 2d_physics/layer_2="Enemy"
+2d_render/layer_3="Objects"
 2d_physics/layer_3="SolidEntity"
 2d_physics/layer_4="Hitboxes"
 2d_physics/layer_5="Hurtboxes"
