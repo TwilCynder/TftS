@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
@@ -11,7 +11,9 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=10]
 [ext_resource path="res://MapElements/InteractionTeleporterDestination.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Maps/Town_Indoors/LaboScripts/LookInteraction.gd" type="Script" id=12]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
+[ext_resource path="res://MapElements/LookInteraction.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -123,6 +125,9 @@ destination = "test"
 [node name="Bat" parent="Layer 0" instance=ExtResource( 13 )]
 position = Vector2( 176, 136 )
 
+[node name="LookInteractionBox" parent="Layer 0" instance=ExtResource( 14 )]
+script = ExtResource( 12 )
+
 [node name="Layer 1" type="Node2D" parent="."]
 z_index = 1
 
@@ -135,3 +140,4 @@ size = Vector2( 1000, 1000 )
 [editable path="Layer 0/YSort/InteractionTeleporter"]
 [editable path="Layer 0/AreaTeleporterPosition"]
 [editable path="Layer 0/AreaTeleporterDestination"]
+[editable path="Layer 0/LookInteractionBox"]
