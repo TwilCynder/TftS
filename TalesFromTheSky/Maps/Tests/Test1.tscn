@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
@@ -11,9 +11,8 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=10]
 [ext_resource path="res://MapElements/InteractionTeleporterDestination.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Maps/Town_Indoors/LaboScripts/LookInteraction.gd" type="Script" id=12]
+[ext_resource path="res://MapElements/LookInteractionBox.gd" type="Script" id=12]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
-[ext_resource path="res://MapElements/LookInteraction.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -88,7 +87,7 @@ position = Vector2( 80.8567, 48.7937 )
 position = Vector2( 120.126, 59.2378 )
 
 [node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
-position = Vector2( 55, 38 )
+position = Vector2( 56, 40.7937 )
 
 [node name="Bat" parent="Layer 0/YSort" instance=ExtResource( 13 )]
 position = Vector2( 159, 69 )
@@ -101,6 +100,9 @@ shape = SubResource( 1 )
 
 [node name="TeleporterDestination" parent="Layer 0/YSort/InteractionTeleporter" index="1"]
 target_scene_path = "res://Maps/Overworld/Faubourgs.tscn"
+
+[node name="LookInteractionBox" type="Area2D" parent="Layer 0/YSort"]
+script = ExtResource( 12 )
 
 [node name="AreaTeleporterPosition" parent="Layer 0" instance=ExtResource( 8 )]
 position = Vector2( 157.632, 8 )
@@ -125,9 +127,6 @@ destination = "test"
 [node name="Bat" parent="Layer 0" instance=ExtResource( 13 )]
 position = Vector2( 176, 136 )
 
-[node name="LookInteractionBox" parent="Layer 0" instance=ExtResource( 14 )]
-script = ExtResource( 12 )
-
 [node name="Layer 1" type="Node2D" parent="."]
 z_index = 1
 
@@ -140,4 +139,3 @@ size = Vector2( 1000, 1000 )
 [editable path="Layer 0/YSort/InteractionTeleporter"]
 [editable path="Layer 0/AreaTeleporterPosition"]
 [editable path="Layer 0/AreaTeleporterDestination"]
-[editable path="Layer 0/LookInteractionBox"]
