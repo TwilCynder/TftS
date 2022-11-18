@@ -86,7 +86,7 @@ position = Vector2( 80.8567, 48.7937 )
 position = Vector2( 120.126, 59.2378 )
 
 [node name="Player" parent="Layer 0/YSort" instance=ExtResource( 9 )]
-position = Vector2( 56, 40.7937 )
+position = Vector2( 55, 38 )
 
 [node name="Bat" parent="Layer 0/YSort" instance=ExtResource( 13 )]
 position = Vector2( 159, 69 )
