@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/DialogBox.gd" type="Script" id=1]
+[ext_resource path="res://UI/DialogPlayer.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -19,14 +20,16 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -4 ), Vector2( 0, 0 ) ]
 }
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="DialogPlayer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="DialogBox" type="Control" parent="."]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="DialogBox"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -35,12 +38,11 @@ margin_left = -64.0
 margin_top = -48.0
 margin_right = 64.0
 margin_bottom = -8.0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="RichTextLabel" parent="Background"]
+[node name="Name" type="RichTextLabel" parent="DialogBox/Background"]
 margin_right = 64.0
 margin_bottom = 8.0
 fit_content_height = true
@@ -48,7 +50,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="Background"]
+[node name="Text" type="RichTextLabel" parent="DialogBox/Background"]
 margin_top = 16.0
 margin_right = 64.0
 margin_bottom = 31.0
@@ -58,12 +60,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Polygon2D" type="Polygon2D" parent="Background"]
+[node name="Indicator" type="Polygon2D" parent="DialogBox/Background"]
 position = Vector2( 0, -0.674007 )
 color = Color( 0.0705882, 0.12549, 0.431373, 1 )
 polygon = PoolVector2Array( 124, 32, 116, 32, 120, 40 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Polygon2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Background/Indicator"]
 anims/Default = SubResource( 1 )
 
-[node name="Timer" type="Timer" parent="Background"]
+[node name="Timer" type="Timer" parent="DialogBox/Background"]
