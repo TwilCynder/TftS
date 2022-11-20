@@ -84,7 +84,7 @@ position = Vector2( 120.126, 59.2378 )
 position = Vector2( 56, 40.7937 )
 
 [node name="Bat" parent="Layer 0/YSort" instance=ExtResource( 13 )]
-position = Vector2( 159, 69 )
+position = Vector2( 230.03, 106.797 )
 
 [node name="NPC" parent="Layer 0/YSort" instance=ExtResource( 14 )]
 position = Vector2( 112, 112 )
@@ -93,8 +93,12 @@ position = Vector2( 112, 112 )
 frames = ExtResource( 15 )
 animation = "stand_left"
 
+[node name="DialogStarter" parent="Layer 0/YSort/NPC" index="2"]
+path = "res://Dialog/dialogs.json"
+id = "faubourgs.garde.quête_test.1"
+
 [node name="Bat" parent="Layer 0" instance=ExtResource( 13 )]
-position = Vector2( 176, 136 )
+position = Vector2( 204.1, 16.2878 )
 
 [node name="TeleporterDestination" parent="Layer 0" instance=ExtResource( 3 )]
 position = Vector2( 0, 144 )
