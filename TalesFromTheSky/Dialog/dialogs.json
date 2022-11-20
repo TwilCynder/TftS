@@ -1,6 +1,18 @@
 {
-    "test1" : {
-        "Name" : "oui",
-        "Text" : "c'est très le test"
+    "faubourgs.garde.quête_test.1" : {
+        "Name" : "Garde",
+        "Text" : "Claude c'est le meilleur lord de FE!"
+    }
+},
+{
+    "faubourgs.mark.quête_test.1" : {
+        "Name" : "Mark",
+        "Text" : "Que se passe-t-il?"
+    }
+},
+{
+    "faubourgs.garde.quête_test.1" : {
+        "Name" : "Garde",
+        "Text" : "Le pont s'est écroulé, impossible de se rendre dans les autres villages. On pourrait le réparer maintenant si on avait les matériaux, mais le bûcheron a justement sa cabane de l'autre côté. Que faire...?"
     }
 }
