@@ -8,7 +8,7 @@ export(String) var destination = ""
 
 func _setPosition(player: Player):
 	var destination_: Destination = SceneManager.current_scene.get_destination(destination)
-	assert (destination_ != null, "Destination not found : " + destination)
+	assert (destination_ != null, ("No default destination" if destination == "" else "Destination not found : " + destination) + " on map " + SceneManager.current_scene.map_name)
 	
 	player.position = destination_.position
 	

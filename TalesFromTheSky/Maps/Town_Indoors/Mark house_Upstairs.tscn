@@ -3,8 +3,9 @@
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Backgrounds/Plancher.png" type="Texture" id=2]
 [ext_resource path="res://Tilesets/Interior.tres" type="TileSet" id=3]
-[ext_resource path="res://MapElements/Destination.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MapElements/Destination/Destination.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MapElements/TeleporterDestination.tscn" type="PackedScene" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )

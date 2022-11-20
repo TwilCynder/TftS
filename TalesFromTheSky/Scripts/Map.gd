@@ -39,6 +39,7 @@ func add_destination(dest: Destination, name: String, default: bool = false) -> 
 	_destinations[name] = dest
 	
 func get_destination(name: String) -> Destination:
+	print(default_destination)
 	if name == "": return default_destination
 	return _destinations.get(name)
 	

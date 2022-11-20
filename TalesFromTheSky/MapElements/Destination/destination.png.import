@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/destination.png-1110611afed8f540ca7feb2c9d7f94f9.stex"
+path="res://.import/destination.png-b591ed85ebf138e090ac434e84fd694b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MapElements/destination.png"
-dest_files=[ "res://.import/destination.png-1110611afed8f540ca7feb2c9d7f94f9.stex" ]
+source_file="res://MapElements/Destination/destination.png"
+dest_files=[ "res://.import/destination.png-b591ed85ebf138e090ac434e84fd694b.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

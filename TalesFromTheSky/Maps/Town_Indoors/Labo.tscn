@@ -5,12 +5,13 @@
 [ext_resource path="res://Tilesets/Backgrounds/Plancher.png" type="Texture" id=3]
 [ext_resource path="res://Tilesets/Interior.tres" type="TileSet" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://MapElements/Destination.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MapElements/Destination/Destination.tscn" type="PackedScene" id=6]
 [ext_resource path="res://MapElements/TeleporterDestination.tscn" type="PackedScene" id=7]
 [ext_resource path="res://MapElements/LookInteraction.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Maps/Town_Indoors/TableScript.gd" type="Script" id=9]
 [ext_resource path="res://Maps/Town_Indoors/LaboScripts/TableScript3.gd" type="Script" id=10]
 [ext_resource path="res://Maps/Town_Indoors/LaboScripts/TableScriptDown.gd" type="Script" id=11]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 16 )

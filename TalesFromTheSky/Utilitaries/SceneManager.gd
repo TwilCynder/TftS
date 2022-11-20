@@ -63,6 +63,7 @@ func _replace_scene(path: String) -> void:
 	current_scene = new_scene
 	_tree.get_root().add_child(current_scene)
 	_tree.set_current_scene(current_scene)
+	current_scene.map_name = path
 	
 	emit_signal("scene_loaded")
 	

@@ -5,6 +5,7 @@ extends Node2D
 #class_name Teleporter_base
 
 export(String, FILE, "*.tscn") var target_scene_path = ""
+#export(PackedScene) var target_scene
 
 func _exit_tree():
 	print("> Teleporter exits tree")

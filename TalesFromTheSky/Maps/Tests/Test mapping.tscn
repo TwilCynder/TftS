@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://World/tutorial/GrassBackground.png" type="Texture" id=2]
+[ext_resource path="res://MapElements/Destination/Destination.gd" type="Script" id=3]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,3 +15,8 @@ stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Destination" type="Position2D" parent="."]
+position = Vector2( 32, 72 )
+script = ExtResource( 3 )
+dest_name = "default"
