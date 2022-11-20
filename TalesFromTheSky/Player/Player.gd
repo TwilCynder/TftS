@@ -52,10 +52,10 @@ var direction: Vector2 = Vector2.RIGHT #last non-zero value input_vector had in 
 #var direction = "Right"
 
 func is_looking_at(point: Vector2)->bool:
-	return Direction.is_same_direction4(direction, point - position)
+	return Direction.is_same_direction4(direction, point - global_position)
 
 func is_looking_towards(point: Vector2)->bool:
-	return Direction.is_similar_direction4(direction, point - position)
+	return Direction.is_similar_direction4(direction, point - global_position)
 
 func start_state_attack():
 	setAnimation("Attack")
