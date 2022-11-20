@@ -22,5 +22,6 @@ func _startDialog():
 	DialogBox.startDialog(path, id)
 
 
-func _on_LookInteractionBox_hero_interact(hero):
+func _on_LookInteractionBox_hero_interact(hero: Player):
+	hero.setAnimation("Idle")
 	_startDialog()

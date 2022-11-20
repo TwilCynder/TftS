@@ -95,7 +95,7 @@ animation = "stand_left"
 
 [node name="DialogStarter" parent="Layer 0/YSort/NPC" index="2"]
 path = "res://Dialog/dialogs.json"
-id = "faubourgs.garde.quête_test.1"
+id = "faubourgs.garde.quête_test.2"
 
 [node name="Bat" parent="Layer 0" instance=ExtResource( 13 )]
 position = Vector2( 204.1, 16.2878 )
