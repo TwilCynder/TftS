@@ -29,6 +29,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="DialogBox"]
+
+[node name="Name" type="RichTextLabel" parent="DialogBox"]
+margin_left = -64.0
+margin_top = -48.0
+margin_bottom = -33.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "Name"
+text = "Name"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Background" type="ColorRect" parent="DialogBox"]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -42,30 +56,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="RichTextLabel" parent="DialogBox/Background"]
-margin_right = 64.0
-margin_bottom = 8.0
-fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text" type="RichTextLabel" parent="DialogBox/Background"]
-margin_top = 16.0
-margin_right = 64.0
-margin_bottom = 31.0
+[node name="Text" type="RichTextLabel" parent="DialogBox"]
+margin_left = -64.0
+margin_top = -32.0
+margin_bottom = -17.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Test"
 fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Indicator" type="Polygon2D" parent="DialogBox/Background"]
-position = Vector2( 0, -0.674007 )
+[node name="Indicator" type="Polygon2D" parent="DialogBox"]
+position = Vector2( -64, -48.674 )
 color = Color( 0.0705882, 0.12549, 0.431373, 1 )
 polygon = PoolVector2Array( 124, 32, 116, 32, 120, 40 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Background/Indicator"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Indicator"]
 anims/Default = SubResource( 1 )
-
-[node name="Timer" type="Timer" parent="DialogBox/Background"]

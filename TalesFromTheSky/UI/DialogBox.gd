@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 export var dialogPath = ""
 export var dialogId = ""

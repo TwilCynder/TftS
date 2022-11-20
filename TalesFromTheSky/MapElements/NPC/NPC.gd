@@ -1,16 +1,6 @@
-extends "res://MapElements/DialogStarter.gd"
+#TODO Maybe rendre plus efficace en enlevant direction_name si set plus souvent que get ?
 
+tool
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+extends KinematicBody2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
