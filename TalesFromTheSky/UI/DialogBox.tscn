@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/DialogBox.gd" type="Script" id=1]
 [ext_resource path="res://UI/DialogPlayer.gd" type="Script" id=2]
 [ext_resource path="res://UI/Dialogues/boite dialogue 1.png" type="Texture" id=3]
+[ext_resource path="res://UI/BoxedtextLabel.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -70,12 +71,10 @@ __meta__ = {
 }
 
 [node name="Text" type="RichTextLabel" parent="DialogBox"]
-margin_left = -72.0
-margin_top = -44.0
-margin_right = 152.0
-custom_colors/default_color = Color( 1, 1, 1, 1 )
-fit_content_height = true
-scroll_following = true
+margin_left = -68.0
+margin_top = -40.0
+margin_right = 148.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
