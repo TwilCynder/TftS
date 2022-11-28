@@ -100,8 +100,8 @@ func setState(state_):
 			
 	state = state_
 
-func _process(delta: float):
-	if Input.is_action_just_pressed("ui_accept"):
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_accept"):
 		SceneManager.on_hero_interact(self)
 
 func _physics_process(delta: float):

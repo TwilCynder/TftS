@@ -7,8 +7,6 @@
 [node name="TeleporterDestination" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-
 [node name="Teleporter" type="Node2D" parent="." index="1"]
 script = ExtResource( 2 )
 
