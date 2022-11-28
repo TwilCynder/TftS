@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Utilitaries/FontManager/FontMaker.gd" type="Script" id=1]
+[ext_resource path="res://Font/font_def2.png" type="Texture" id=2]
+
+[node name="FontMaker" type="Node"]
+script = ExtResource( 1 )
+texture = ExtResource( 2 )
+save_directory = "res://Font"
+file_name = "tfts_"
+char_size = Vector2( 6, 12 )

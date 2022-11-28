@@ -3,7 +3,7 @@
 [ext_resource path="res://UI/DialogBox.gd" type="Script" id=1]
 [ext_resource path="res://UI/DialogPlayer.gd" type="Script" id=2]
 [ext_resource path="res://UI/Dialogues/boite dialogue 1.png" type="Texture" id=3]
-[ext_resource path="res://UI/BoxedtextLabel.gd" type="Script" id=4]
+[ext_resource path="res://UI/theme.tres" type="Theme" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -35,6 +35,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+char_size = Vector2( 6, 12 )
 
 [node name="Timer" type="Timer" parent="DialogBox"]
 
@@ -43,9 +44,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -76.0
+margin_left = -72.0
 margin_top = -44.0
-margin_right = 156.0
+margin_right = 160.0
 margin_bottom = 4.0
 color = Color( 0, 0, 0, 0.639216 )
 __meta__ = {
@@ -61,20 +62,12 @@ margin_left = -68.0
 margin_top = -64.0
 margin_right = -4.0
 margin_bottom = -49.0
+theme = ExtResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 bbcode_text = "Name"
 text = "Name"
 fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text" type="RichTextLabel" parent="DialogBox"]
-margin_left = -68.0
-margin_top = -40.0
-margin_right = 148.0
-script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -86,3 +79,15 @@ polygon = PoolVector2Array( 124, 32, 116, 32, 120, 40 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Indicator"]
 anims/Default = SubResource( 1 )
+
+[node name="Text" type="RichTextLabel" parent="DialogBox"]
+margin_left = -68.0
+margin_top = -40.0
+margin_right = 136.0
+theme = ExtResource( 4 )
+text = "Ceci est un test bla bla blaaaaaa retouuur a la liiigne"
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
