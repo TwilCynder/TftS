@@ -9,7 +9,6 @@
 [ext_resource path="res://MapElements/Destination/Destination.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tilesets/Forest.tres" type="TileSet" id=8]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 8 )
 
