@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Backgrounds/sky_background.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://MapElements/TeleporterDestination.tscn" type="PackedScene" id=9]
 [ext_resource path="res://MapElements/NPC/NPC.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sprites/NPCs/Soldier/soldier_stance.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/NPCs/Man/man_stance.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 11 )
@@ -36,11 +37,22 @@ animations = [ {
 "speed": 1.0
 } ]
 
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 24 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 17 )
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
@@ -103,6 +115,9 @@ id = "faubourgs.garde.quête_test.2"
 [node name="Lumberjack" parent="Layer 1/YSort/NPCs" instance=ExtResource( 10 )]
 position = Vector2( 1008, 272 )
 
+[node name="AnimatedSprite" parent="Layer 1/YSort/NPCs/Lumberjack" index="1"]
+frames = SubResource( 8 )
+
 [node name="DialogStarter" parent="Layer 1/YSort/NPCs/Lumberjack" index="2"]
 path = "res://Dialog/dialogs.json"
 id = "faubourgs.bûcheron.quête_test.1"
@@ -128,6 +143,10 @@ dest_name = "South entry"
 position = Vector2( 1328, 592 )
 dest_name = "North entry"
 
+[node name="Cabin entry" parent="Layer 1/Destinations" instance=ExtResource( 7 )]
+position = Vector2( 952, 280 )
+dest_name = "Cabin entry"
+
 [node name="Teleporters" type="Node2D" parent="Layer 1"]
 
 [node name="TP south entry" parent="Layer 1/Teleporters" instance=ExtResource( 9 )]
@@ -149,6 +168,16 @@ shape = SubResource( 2 )
 [node name="Teleporter" parent="Layer 1/Teleporters/TP north entry" index="1"]
 target_scene_path = "res://Maps/Overworld/Town.tscn"
 destination = "North entry"
+
+[node name="TeleporterDestination" parent="Layer 1/Teleporters" instance=ExtResource( 9 )]
+
+[node name="CollisionShape2D" parent="Layer 1/Teleporters/TeleporterDestination" index="0"]
+position = Vector2( 952, 255 )
+shape = SubResource( 9 )
+
+[node name="Teleporter" parent="Layer 1/Teleporters/TeleporterDestination" index="1"]
+target_scene_path = "res://Maps/Faubourgs_Indoors/Cabin.tscn"
+destination = "Entrance"
 
 [node name="Layer 2" type="Node2D" parent="."]
 
@@ -174,3 +203,4 @@ size = Vector2( 2240, 1680 )
 [editable path="Layer 1/YSort/NPCs/Lumberjack/LookInteractionBox"]
 [editable path="Layer 1/Teleporters/TP south entry"]
 [editable path="Layer 1/Teleporters/TP north entry"]
+[editable path="Layer 1/Teleporters/TeleporterDestination"]
