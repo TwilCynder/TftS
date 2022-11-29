@@ -88,6 +88,9 @@ position = Vector2( 230.03, 106.797 )
 
 [node name="NPC" parent="Layer 0/YSort" instance=ExtResource( 14 )]
 position = Vector2( 112, 112 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" parent="Layer 0/YSort/NPC" index="1"]
 frames = ExtResource( 15 )

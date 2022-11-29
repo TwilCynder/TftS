@@ -44,7 +44,7 @@ func splitDialogBoxes(s: String) -> Array:
 						res.append(s.substr(current_segment_start, last_word_end - current_segment_start))
 						current_segment_start = current_word_start
 						line_i = 0
-					chars_on_line = 0
+					chars_on_line = 1
 					i = current_word_start
 				else:
 					last_word_end = i
