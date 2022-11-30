@@ -55,6 +55,11 @@ _global_script_classes=[ {
 "path": "res://Enemies/Enemy.gd"
 }, {
 "base": "Node",
+"class": "FontConfigurator",
+"language": "GDScript",
+"path": "res://Utilitaries/FontManager/FontConfigurator.gd"
+}, {
+"base": "Node",
 "class": "FontMaker",
 "language": "GDScript",
 "path": "res://Utilitaries/FontManager/FontMaker.gd"
@@ -154,6 +159,7 @@ _global_script_class_icons={
 "Direction": "",
 "EditorOnly": "",
 "Enemy": "",
+"FontConfigurator": "",
 "FontMaker": "",
 "Hitbox": "",
 "Hurtbox": "",

@@ -10,7 +10,6 @@
 [ext_resource path="res://Tilesets/Town.tres" type="TileSet" id=8]
 [ext_resource path="res://MapElements/TeleporterDestination.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
@@ -27,6 +26,9 @@ margin_right = 2240.0
 margin_bottom = 1680.0
 texture = ExtResource( 2 )
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Layer 1" type="Node2D" parent="."]
 
@@ -57,8 +59,6 @@ tile_data = PoolIntArray( 196670, 79, 0, 196672, 79, 0, 196683, 79, 0, 262218, 7
 [node name="Player" parent="Layer 1" instance=ExtResource( 5 )]
 position = Vector2( 1440, 600 )
 
-[node name="Node2D" type="Node2D" parent="."]
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Bat" parent="Enemies" instance=ExtResource( 4 )]
@@ -77,7 +77,7 @@ position = Vector2( 528, 1480 )
 dest_name = "South entry"
 
 [node name="North entry" parent="Destinations" instance=ExtResource( 7 )]
-position = Vector2( 1328, 592 )
+position = Vector2( 1344, 600 )
 dest_name = "North entry"
 
 [node name="Layer 2" type="Node2D" parent="."]
