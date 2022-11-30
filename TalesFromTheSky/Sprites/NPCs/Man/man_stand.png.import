@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/name_box1.png-8d308cbbe15f31043ad3642da844829c.stex"
+path="res://.import/man_stand.png-9607f302c87180c5095236bf99ab7ae9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Dialogues/name_box1.png"
-dest_files=[ "res://.import/name_box1.png-8d308cbbe15f31043ad3642da844829c.stex" ]
+source_file="res://Sprites/NPCs/Man/man_stand.png"
+dest_files=[ "res://.import/man_stand.png-9607f302c87180c5095236bf99ab7ae9.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

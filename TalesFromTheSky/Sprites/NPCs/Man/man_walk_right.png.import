@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/font_def2.png-ce801fa8bef75b749ff417a6e6544fa4.stex"
+path="res://.import/man_walk_right.png-e23d2b2926fa1749c11e80b47df20114.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Font/font_def2.png"
-dest_files=[ "res://.import/font_def2.png-ce801fa8bef75b749ff417a6e6544fa4.stex" ]
+source_file="res://Sprites/NPCs/Man/man_walk_right.png"
+dest_files=[ "res://.import/man_walk_right.png-e23d2b2926fa1749c11e80b47df20114.stex" ]
 
 [params]
 

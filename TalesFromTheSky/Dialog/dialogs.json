@@ -7,12 +7,24 @@
 
     "faubourgs.mark.quête_test.1" : [{
         "Name" : "Mark",
-        "Text" : "Que se passe-t-il?"
+        "Text" : "What's happening?"
     }]
 ,
 
     "faubourgs.garde.quête_test.2" : [{
-        "Name" : "Garde",
-        "Text" : "Le pont s'est ecroule, impossible de se rendre dans les autres villages. On pourrait le reparer maintenant si on avait les materiaux, mais le bucheron a justement sa cabane de l'autre cote. Que faire...?"
+        "Name" : "Guard",
+        "Text" : "The bridge collapsed, we cannot reach the other villages. With the materials we could fix it, but the lumberjack's cabin's on the other bank. What can we do?"
+    }]
+,
+
+    "faubourgs.bûcheron.quête_test.1" : [{
+        "Name" : "Lumberjack",
+        "Text" : "Wood? Sure you can take all the wood you want... But to do so you will have to solve a problem. A monster moved in my storehouse and I can't get rid of it by myself!"
+    }]
+,
+
+    "faubourgs.bûcheron.quête_test.2" : [{
+        "Name" : "Lumberjack",
+        "Text" : "What are you waiting? The storehouse is right here. If you can defeat the monster inside, my wood is all yours!"
     }]
 }
