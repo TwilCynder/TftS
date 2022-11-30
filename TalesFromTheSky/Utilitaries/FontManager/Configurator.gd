@@ -3,7 +3,7 @@ tool
 extends FontConfigurator
 
 func init():
-	largeur_caractere("l", 3)
+	largeur_caractère("I", 3)
 
 	print(advance)
 
