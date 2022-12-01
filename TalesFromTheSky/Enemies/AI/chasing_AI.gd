@@ -6,7 +6,10 @@ enum {
 	STATES
 }
 
-export (int) var chase_speed: int = 70
+export (int) var chase_speed: float = 70
+export (int) var chase_acceleration: float = 70
+
+var current_speed: float = 0
 
 var hero: Player
 var state = WANDER
@@ -22,7 +25,11 @@ func _wander(delta):
 	pass #override me
 
 func _chase(delta):
-	enemy.current_speed = global_position.direction_to(hero.global_position) * chase_speed
+	current_speed = enemy.current_speed.length()
+	current_speed += chase_acceleration * delta
+	if current_speed >= chase_speed:
+		current_speed = chase_speed
+	enemy.current_speed = global_position.direction_to(hero.global_position) * current_speed
 
 func physics_process(delta):
 	match state:

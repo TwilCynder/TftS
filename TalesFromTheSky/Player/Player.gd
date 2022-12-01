@@ -158,3 +158,4 @@ func _on_Hurtbox_hit(hitbox: Hitbox, hurtbox: Hurtbox):
 	var knockback: Vector2 = hitbox.computeEffectiveKnockback(hurtbox.global_position)
 	velocity = knockback
 	setState(KNOCKBACK)
+	

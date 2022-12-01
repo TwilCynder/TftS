@@ -12,3 +12,6 @@ func _process(delta):
 func die():
 	position.y -= 8
 	.die()
+
+func _on_Hitbox_hit(hitbox, hurtbox: Hurtbox):
+	print(hurtbox.owner)

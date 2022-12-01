@@ -60,7 +60,8 @@ func _physics_process(delta):
 			if current_speed == Vector2.ZERO:
 				state = FREE
 				#AI takes control again
-			current_speed = move_and_slide(current_speed)
+			else:
+				current_speed = move_and_slide(current_speed)
 		FREE:
 			ai.physics_process(delta)
 			current_speed = move_and_slide(current_speed)

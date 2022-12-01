@@ -13,6 +13,8 @@ export(HitboxType) var hitboxType = HitboxType.NONE
 
 var knockback = null
 
+signal hit(hitbox, hurtbox)
+
 onready var collisionShape: CollisionShape2D = $CollisionShape2D
 
 func set_enabled(state: bool):
@@ -25,3 +27,6 @@ func computeEffectiveKnockback(posTarget: Vector2) -> Vector2:
 		return (posTarget - global_position) * (knockback / global_position.distance_to(posTarget))
 	else:
 		return Vector2.ZERO 
+
+func on_hit(hurtbox):
+	emit_signal("hit", self, hurtbox)
