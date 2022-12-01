@@ -41,11 +41,18 @@ func load_font(path: Texture):
 	
 	var tex_w: int = texture.get_size().x
 
+	var configurator: FontConfigurator = $Configurator
+
+	print(configurator)
+	print(configurator.init())
+	print(configurator.advance)
+
 	var region: Rect2 = Rect2(Vector2.ZERO, char_size)
 	var array: PoolByteArray = alphabet.to_ascii()
 	for c in array:
-		font.add_char(c, 0, region, Vector2.ZERO, char_size.x + 1)
-		print(c, region)
+		var advance: int = configurator.advance[c] if configurator.advance.has(c) else char_size.x + 1
+		print(advance)
+		font.add_char(c, 0, region, Vector2.ZERO, advance)
 		region.position.x += char_size.x
 		if region.position.x >= tex_w:
 			region.position.x = 0
