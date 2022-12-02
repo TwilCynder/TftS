@@ -37,6 +37,7 @@ func die():
 	print(enemy_type + " dies")
 	AnimatedEffect.displayEffect(DeathEffect.instance(), self.position)
 	queue_free()
+	GameEvents.emit_signal("enemy_dies", self)
 
 func is_dying():
 	return stats.hp < 1

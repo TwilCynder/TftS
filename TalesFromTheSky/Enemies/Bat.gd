@@ -15,3 +15,4 @@ func die():
 
 func _on_Hitbox_hit(hitbox, hurtbox: Hurtbox):
 	print(hurtbox.owner)
+

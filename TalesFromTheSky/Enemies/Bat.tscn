@@ -68,7 +68,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 7 )
 animation = "Fly"
-frame = 4
+frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 
@@ -85,8 +85,10 @@ shape = SubResource( 1 )
 
 [node name="Stats" parent="." index="4"]
 max_hp = 2
+xp_value = 20
 
 [node name="AI" parent="." index="5" instance=ExtResource( 4 )]
+visible = false
 script = ExtResource( 6 )
 
 [node name="PlayerDetector" parent="AI" index="0"]

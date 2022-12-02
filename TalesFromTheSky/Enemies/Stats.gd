@@ -6,6 +6,7 @@ signal no_hp
 
 export (int) var max_hp = 1
 export (int) var deceleration = 200
+export (int) var xp_value = 1
 
 onready var hp: int = max_hp setget set_hp
 
