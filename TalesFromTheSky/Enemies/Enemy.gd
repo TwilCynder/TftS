@@ -8,9 +8,8 @@ enum {
 	FREE,
 	KNOCKBACK,
 	STATES
-} #An enemy that has more states should extend this enmu using `enum {MYSTATE = STATES, ...}` 
+} #An enemy that has more states should extend this enum using `enum {MYSTATE = STATES, ...}` 
 #wow j'ai vraiment inventé ça ? si c'est le cas gg twil d'il y a 2 semaines
-
 
 var state = FREE
 var current_speed: Vector2 = Vector2.ZERO
