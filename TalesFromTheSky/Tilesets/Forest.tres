@@ -1,9 +1,12 @@
-[gd_resource type="TileSet" load_steps=40 format=2]
+[gd_resource type="TileSet" load_steps=41 format=2]
 
 [ext_resource path="res://Tilesets (Secret of Mana)/forest_tileset.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=39]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 16, 16, 16, 0, 16 )
@@ -1909,3 +1912,80 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 110/z_index = 0
+111/name = "forest_tileset.png 111"
+111/texture = ExtResource( 1 )
+111/tex_offset = Vector2( 0, 0 )
+111/modulate = Color( 1, 1, 1, 1 )
+111/region = Rect2( 96, 192, 32, 32 )
+111/tile_mode = 0
+111/occluder_offset = Vector2( 0, 0 )
+111/navigation_offset = Vector2( 0, 0 )
+111/shape_offset = Vector2( 0, 0 )
+111/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+111/shape_one_way = false
+111/shape_one_way_margin = 0.0
+111/shapes = [  ]
+111/z_index = 0
+112/name = "forest_tileset.png 112"
+112/texture = ExtResource( 1 )
+112/tex_offset = Vector2( 0, 0 )
+112/modulate = Color( 1, 1, 1, 1 )
+112/region = Rect2( 192, 96, 16, 16 )
+112/tile_mode = 0
+112/occluder_offset = Vector2( 0, 0 )
+112/navigation_offset = Vector2( 0, 0 )
+112/shape_offset = Vector2( 0, 0 )
+112/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+112/shape_one_way = false
+112/shape_one_way_margin = 0.0
+112/shapes = [  ]
+112/z_index = 0
+113/name = "forest_tileset.png 113"
+113/texture = ExtResource( 1 )
+113/tex_offset = Vector2( 0, 0 )
+113/modulate = Color( 1, 1, 1, 1 )
+113/region = Rect2( 208, 112, 16, 16 )
+113/tile_mode = 0
+113/occluder_offset = Vector2( 0, 0 )
+113/navigation_offset = Vector2( 0, 0 )
+113/shape_offset = Vector2( 0, 0 )
+113/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+113/shape_one_way = false
+113/shape_one_way_margin = 0.0
+113/shapes = [  ]
+113/z_index = 0
+114/name = "forest_tileset.png 114"
+114/texture = ExtResource( 1 )
+114/tex_offset = Vector2( 0, 0 )
+114/modulate = Color( 1, 1, 1, 1 )
+114/region = Rect2( 64, 272, 32, 16 )
+114/tile_mode = 0
+114/occluder_offset = Vector2( 0, 0 )
+114/navigation_offset = Vector2( 0, 0 )
+114/shape_offset = Vector2( 0, 0 )
+114/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+114/shape = SubResource( 39 )
+114/shape_one_way = false
+114/shape_one_way_margin = 1.0
+114/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 39 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+114/z_index = 0
+115/name = "forest_tileset.png 115"
+115/texture = ExtResource( 1 )
+115/tex_offset = Vector2( 0, 0 )
+115/modulate = Color( 1, 1, 1, 1 )
+115/region = Rect2( 64, 240, 32, 32 )
+115/tile_mode = 0
+115/occluder_offset = Vector2( 0, 0 )
+115/navigation_offset = Vector2( 0, 0 )
+115/shape_offset = Vector2( 0, 0 )
+115/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+115/shape_one_way = false
+115/shape_one_way_margin = 0.0
+115/shapes = [  ]
+115/z_index = 0

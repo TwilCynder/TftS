@@ -100,7 +100,6 @@ position = Vector2( 160, 432 )
 
 [node name="AnimatedSprite" parent="Layer 1/YSort/NPCs/Granny" index="1"]
 frames = SubResource( 9 )
-frame = 3
 playing = true
 
 [node name="DialogStarter" parent="Layer 1/YSort/NPCs/Granny" index="2"]

@@ -34,3 +34,8 @@
         "Text" : "My, what a beautiful day!"
     }]
 ,
+
+    "faubourgs.man.overworld_test.1" : [{
+        "Name" : "Farmer",
+        "Text" : "Aren't these crops beautiful? I dedicate all my life to them."
+    }]
