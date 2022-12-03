@@ -8,7 +8,7 @@
 script = ExtResource( 1 )
 texture = ExtResource( 2 )
 save_directory = "res://Font"
-file_name = "corrected_font_1"
+file_name = "corrected_font_2"
 char_size = Vector2( 6, 12 )
 
 [node name="Configurator" type="Node" parent="."]

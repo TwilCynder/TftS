@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Tilesets/Town.tres" type="TileSet" id=1]
 [ext_resource path="res://MapElements/TeleporterDestination.tscn" type="PackedScene" id=2]
@@ -9,6 +9,31 @@
 [ext_resource path="res://MapElements/Destination/Destination.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tilesets/Forest.tres" type="TileSet" id=8]
 [ext_resource path="res://MapElements/NPC/NPC.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/NPCs/Granny/granny_stance.png" type="Texture" id=10]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 10 )
+region = Rect2( 20, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 10 )
+region = Rect2( 40, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 10 )
+region = Rect2( 60, 0, 20, 30 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 8 )
@@ -72,6 +97,15 @@ position = Vector2( 448, 200 )
 
 [node name="Granny" parent="Layer 1/YSort/NPCs" instance=ExtResource( 9 )]
 position = Vector2( 160, 432 )
+
+[node name="AnimatedSprite" parent="Layer 1/YSort/NPCs/Granny" index="1"]
+frames = SubResource( 9 )
+frame = 3
+playing = true
+
+[node name="DialogStarter" parent="Layer 1/YSort/NPCs/Granny" index="2"]
+path = "res://Dialog/dialogs.json"
+id = "town.granny.overworld_test.1"
 
 [node name="Guard" parent="Layer 1/YSort/NPCs" instance=ExtResource( 9 )]
 position = Vector2( 1248, 96 )
@@ -161,6 +195,8 @@ destination = "Lab entrance"
 script = ExtResource( 6 )
 size = Vector2( 1280, 960 )
 
+[editable path="Layer 1/YSort/NPCs/Granny"]
+[editable path="Layer 1/YSort/NPCs/Granny/LookInteractionBox"]
 [editable path="Teleporters/TP house"]
 [editable path="Teleporters/TP south"]
 [editable path="Teleporters/TP north"]

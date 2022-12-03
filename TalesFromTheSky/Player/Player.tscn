@@ -999,7 +999,7 @@ graph_offset = Vector2( 0, 25.7592 )
 
 [sub_resource type="CapsuleShape2D" id=41]
 radius = 4.45667
-height = 11.1101
+height = 9.07374
 
 [sub_resource type="CapsuleShape2D" id=42]
 radius = 8.0
@@ -1032,6 +1032,7 @@ anims/Run_Right = SubResource( 14 )
 anims/Run_Up = SubResource( 15 )
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0.927031, 0.662165 )
 rotation = -1.5708
 shape = SubResource( 16 )
@@ -1049,12 +1050,13 @@ position = Vector2( 0, -4 )
 rotation = 4.71239
 
 [node name="Swordhitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
-position = Vector2( 6.49797, 6.24785 )
+position = Vector2( 11.9252, 4.59607 )
 hitboxType = 1
 
 [node name="CollisionShape2D" parent="HitboxPivot/Swordhitbox" index="0"]
+position = Vector2( 0.50204, 3.75214 )
+rotation = 1.5708
 shape = SubResource( 41 )
-disabled = true
 
 [node name="CenterArea" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 1.96686 )
@@ -1063,6 +1065,7 @@ position = Vector2( 0, 1.96686 )
 current = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 13 )]
+visible = false
 position = Vector2( 0, -6 )
 collision_layer = 1
 hit_by = [ 2 ]

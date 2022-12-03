@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Backgrounds/sky_background.png" type="Texture" id=2]
@@ -17,21 +17,9 @@
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 22, 35 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 11 )
-region = Rect2( 22, 0, 22, 35 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 11 )
-region = Rect2( 44, 0, 22, 35 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 11 )
-region = Rect2( 66, 0, 22, 35 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.0
@@ -64,9 +52,6 @@ margin_right = 2240.0
 margin_bottom = 1680.0
 texture = ExtResource( 2 )
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Layer 1" type="Node2D" parent="."]
 
@@ -108,7 +93,6 @@ position = Vector2( 1504, 432 )
 
 [node name="AnimatedSprite" parent="Layer 1/YSort/NPCs/Guard" index="1"]
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="DialogStarter" parent="Layer 1/YSort/NPCs/Guard" index="2"]
@@ -131,10 +115,19 @@ id = "faubourgs.bûcheron.quête_test.1"
 position = Vector2( 1064, 200 )
 
 [node name="Bat2" parent="Layer 1/YSort/Enemies" instance=ExtResource( 4 )]
-position = Vector2( 1800, 1048 )
+position = Vector2( 2080, 576 )
 
 [node name="Bat3" parent="Layer 1/YSort/Enemies" instance=ExtResource( 4 )]
 position = Vector2( 1177, 88 )
+
+[node name="Bat4" parent="Layer 1/YSort/Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1720, 1160 )
+
+[node name="Bat5" parent="Layer 1/YSort/Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2160, 760 )
+
+[node name="Bat6" parent="Layer 1/YSort/Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1992, 920 )
 
 [node name="Destinations" type="Node2D" parent="Layer 1"]
 
