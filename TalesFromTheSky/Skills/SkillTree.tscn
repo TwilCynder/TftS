@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Skills/Skill.gd" type="Script" id=2]
+
+[node name="Node" type="Node"]
+
+[node name="Glace" type="Node" parent="."]
+script = ExtResource( 2 )
+skill_name = "Glace"
+
+[node name="Extra-Glace" type="Node" parent="Glace"]
+script = ExtResource( 2 )
+skill_name = "Extra-Glace"
+
+[node name="Méga-Glace" type="Node" parent="Glace/Extra-Glace"]
+script = ExtResource( 2 )
+skill_name = "Méga-Glace"
+
+[node name="Vent" type="Node" parent="."]
+script = ExtResource( 2 )
+skill_name = "Vent"
+
+[node name="Extra-Vent" type="Node" parent="Vent"]
+script = ExtResource( 2 )
+skill_name = "Extra-Vent"
+
+[node name="Méga-Vent" type="Node" parent="Vent/Extra-Vent"]
+script = ExtResource( 2 )
+skill_name = "Méga-Vent"
+
+[node name="Dash" type="Node" parent="Vent"]
+script = ExtResource( 2 )
+skill_name = "Dash"
+
+[node name="Téléportation" type="Node" parent="Vent/Dash"]
+script = ExtResource( 2 )
+skill_name = "Téléportation"

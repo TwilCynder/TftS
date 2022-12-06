@@ -999,7 +999,7 @@ graph_offset = Vector2( 0, 25.7592 )
 
 [sub_resource type="CapsuleShape2D" id=41]
 radius = 4.45667
-height = 9.07374
+height = 9.06667
 
 [sub_resource type="CapsuleShape2D" id=42]
 radius = 8.0
@@ -1011,8 +1011,8 @@ script = ExtResource( 2 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
 position = Vector2( 0, -9 )
-texture = ExtResource( 14 )
-hframes = 8
+texture = ExtResource( 9 )
+hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 1 )
@@ -1050,13 +1050,14 @@ position = Vector2( 0, -4 )
 rotation = 4.71239
 
 [node name="Swordhitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
-position = Vector2( 11.9252, 4.59607 )
+position = Vector2( -2.23286, -8.61816 )
 hitboxType = 1
 
 [node name="CollisionShape2D" parent="HitboxPivot/Swordhitbox" index="0"]
 position = Vector2( 0.50204, 3.75214 )
 rotation = 1.5708
 shape = SubResource( 41 )
+disabled = true
 
 [node name="CenterArea" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 1.96686 )
