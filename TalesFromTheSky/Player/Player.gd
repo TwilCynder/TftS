@@ -3,7 +3,8 @@ extends MapEntity
 enum {
 	FREE,
 	ATTACK,
-	KNOCKBACK
+	KNOCKBACK,
+	SPELL_CAST
 }
 
 class_name Player
@@ -66,6 +67,9 @@ func start_state_free():
 	
 func start_state_knockback():
 	setAnimation("HurtLeft")
+	
+func start_state_spellcast():
+	setAnimation("Idle")
 
 func attack_animation_finished():
 	setState(FREE)
@@ -80,6 +84,9 @@ func exit_state_attack():
 func exit_state_knockback():
 	pass
 	
+func exit_state_spellcast():
+	pass
+	
 func exit_current_state():
 	match state:
 		FREE:
@@ -88,6 +95,8 @@ func exit_current_state():
 			exit_state_attack()
 		KNOCKBACK:
 			exit_state_knockback()
+		SPELL_CAST:
+			exit_state_spellcast()
 
 func setState(state_):
 	match state_:
@@ -97,6 +106,8 @@ func setState(state_):
 			start_state_attack()
 		KNOCKBACK:
 			start_state_knockback()
+		SPELL_CAST:
+			start_state_spellcast()
 			
 	state = state_
 
@@ -112,6 +123,11 @@ func _physics_process(delta: float):
 			attack_state(delta)
 		KNOCKBACK:
 			knockback_state(delta)
+		SPELL_CAST:
+			spellcast_state(delta)
+		
+func spellcast_state(delta):
+	pass
 		
 func attack_state(delta):
 	pass
