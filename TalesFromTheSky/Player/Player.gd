@@ -19,6 +19,7 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/Swordhitbox
 onready var collisionBox = $CollisionBox
+onready var effect_manager: EffectManager = $EffectManager
 
 var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
 
@@ -27,6 +28,8 @@ func _enter_tree():
 
 			
 func _ready():
+	print("Glace : ",  ProgressManager.skill_tree.get_skill("Glace"))
+	
 	print("> Hello there ! (Player ready)")
 	
 	var root = SceneManager.current_scene
@@ -111,9 +114,15 @@ func setState(state_):
 			
 	state = state_
 
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept"):
 		SceneManager.on_hero_interact(self)
+	elif event.is_action_pressed("skill"):
+		var glace = ProgressManager.get_spell("Glace")
+		if glace == null:
+			print('NULL')
+		else:
+			glace.use(self)
 
 func _physics_process(delta: float):
 	match state:
@@ -175,3 +184,5 @@ func _on_Hurtbox_hit(hitbox: Hitbox, hurtbox: Hurtbox):
 	velocity = knockback
 	setState(KNOCKBACK)
 	
+func _get_skill_tree():
+	print(ProgressManager.skill_tree)

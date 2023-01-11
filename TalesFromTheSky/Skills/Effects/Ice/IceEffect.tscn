@@ -14,9 +14,9 @@ region = Rect2( 16, 0, 16, 16 )
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
+"loop": false,
 "name": "default",
-"speed": 2.0
+"speed": 8.0
 } ]
 
 [node name="AnimatedEffect" type="AnimatedSprite"]
