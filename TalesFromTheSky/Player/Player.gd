@@ -27,9 +27,10 @@ var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
 func _enter_tree():
 	print("> Player enter tree")
 
-			
+func add_effect_to_parent(fx, position) -> AnimatedEffect:
+	return EffectManager.add_effect_to(get_parent(), fx, self.position + position)
+
 func _ready():
-	
 	print("> Hello there ! (Player ready)")
 	
 	var root = SceneManager.current_scene
