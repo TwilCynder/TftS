@@ -10,6 +10,7 @@ enum {
 class_name Player
 
 signal interact()
+signal skill_end
 
 export(bool) var allow_redundancy = false #If unchecked, delete the hero if there is another on the same Map ? (typically on maps with Auto Hero)
 export(bool) var use_as_default_destination = true #If checked, will
@@ -19,7 +20,7 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/Swordhitbox
 onready var collisionBox = $CollisionBox
-onready var effect_manager: EffectManager = $EffectManager
+onready var effect_manager: EffectManager = $YSort/EffectManager
 
 var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
 
@@ -28,7 +29,6 @@ func _enter_tree():
 
 			
 func _ready():
-	print("Glace : ",  ProgressManager.skill_tree.get_skill("Glace"))
 	
 	print("> Hello there ! (Player ready)")
 	
@@ -114,15 +114,20 @@ func setState(state_):
 			
 	state = state_
 
+
+func use_skill(skill):
+	setState(SPELL_CAST)
+	skill.use(self)
+	
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept"):
 		SceneManager.on_hero_interact(self)
 	elif event.is_action_pressed("skill"):
 		var glace = ProgressManager.get_spell("Glace")
 		if glace == null:
-			print('NULL')
+			print('NULL SKILL')
 		else:
-			glace.use(self)
+			use_skill(glace)
 
 func _physics_process(delta: float):
 	match state:
@@ -186,3 +191,9 @@ func _on_Hurtbox_hit(hitbox: Hitbox, hurtbox: Hurtbox):
 	
 func _get_skill_tree():
 	print(ProgressManager.skill_tree)
+
+func end_skill():
+	setState(FREE)
+
+func ping():
+	print("Pong")
