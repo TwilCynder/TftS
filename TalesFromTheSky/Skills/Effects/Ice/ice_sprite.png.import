@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/soldier_walk_down.png-c8983d80e79d4e1ad6bba079c1da1103.stex"
+path="res://.import/ice_sprite.png-b6b286bb3246851dc1d2e25c6e822d7f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/NPCs/Soldier/soldier_walk_down.png"
-dest_files=[ "res://.import/soldier_walk_down.png-c8983d80e79d4e1ad6bba079c1da1103.stex" ]
+source_file="res://Skills/Effects/Ice/ice_sprite.png"
+dest_files=[ "res://.import/ice_sprite.png-b6b286bb3246851dc1d2e25c6e822d7f.stex" ]
 
 [params]
 

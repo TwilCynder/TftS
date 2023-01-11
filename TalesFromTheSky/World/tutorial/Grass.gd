@@ -4,9 +4,7 @@ var CutEffect = load("res://Effects/GrassCut.tscn")
 var Hitbox = load("res://Overlap/Hitbox.gd")
 
 func create_cut_effect():
-	var cutEffect = CutEffect.instance()
-	get_parent().add_child(cutEffect)
-	cutEffect.position = self.position
+	EffectManager.add_effect_to(get_parent(), CutEffect, position)
 
 func _process(delta):
 	pass

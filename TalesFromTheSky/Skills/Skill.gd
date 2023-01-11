@@ -17,3 +17,6 @@ func _refresh_name(b: bool):
 
 func _ready():
 	name = skill_name
+
+func use(player: Player):
+	pass

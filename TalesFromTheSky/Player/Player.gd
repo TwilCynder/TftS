@@ -3,7 +3,8 @@ extends MapEntity
 enum {
 	FREE,
 	ATTACK,
-	KNOCKBACK
+	KNOCKBACK,
+	SPELL_CAST
 }
 
 class_name Player
@@ -18,6 +19,7 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/Swordhitbox
 onready var collisionBox = $CollisionBox
+onready var effect_manager: EffectManager = $EffectManager
 
 var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
 
@@ -26,6 +28,8 @@ func _enter_tree():
 
 			
 func _ready():
+	print("Glace : ",  ProgressManager.skill_tree.get_skill("Glace"))
+	
 	print("> Hello there ! (Player ready)")
 	
 	var root = SceneManager.current_scene
@@ -66,6 +70,9 @@ func start_state_free():
 	
 func start_state_knockback():
 	setAnimation("HurtLeft")
+	
+func start_state_spellcast():
+	setAnimation("Idle")
 
 func attack_animation_finished():
 	setState(FREE)
@@ -80,6 +87,9 @@ func exit_state_attack():
 func exit_state_knockback():
 	pass
 	
+func exit_state_spellcast():
+	pass
+	
 func exit_current_state():
 	match state:
 		FREE:
@@ -88,6 +98,8 @@ func exit_current_state():
 			exit_state_attack()
 		KNOCKBACK:
 			exit_state_knockback()
+		SPELL_CAST:
+			exit_state_spellcast()
 
 func setState(state_):
 	match state_:
@@ -97,12 +109,20 @@ func setState(state_):
 			start_state_attack()
 		KNOCKBACK:
 			start_state_knockback()
+		SPELL_CAST:
+			start_state_spellcast()
 			
 	state = state_
 
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept"):
 		SceneManager.on_hero_interact(self)
+	elif event.is_action_pressed("skill"):
+		var glace = ProgressManager.get_spell("Glace")
+		if glace == null:
+			print('NULL')
+		else:
+			glace.use(self)
 
 func _physics_process(delta: float):
 	match state:
@@ -112,6 +132,11 @@ func _physics_process(delta: float):
 			attack_state(delta)
 		KNOCKBACK:
 			knockback_state(delta)
+		SPELL_CAST:
+			spellcast_state(delta)
+		
+func spellcast_state(delta):
+	pass
 		
 func attack_state(delta):
 	pass
@@ -159,3 +184,5 @@ func _on_Hurtbox_hit(hitbox: Hitbox, hurtbox: Hurtbox):
 	velocity = knockback
 	setState(KNOCKBACK)
 	
+func _get_skill_tree():
+	print(ProgressManager.skill_tree)
