@@ -84,6 +84,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://MapElements/InteractionBox.gd"
 }, {
+"base": "Node2D",
+"class": "Layer",
+"language": "GDScript",
+"path": "res://Scripts/Layer.gd"
+}, {
 "base": "InteractionBox",
 "class": "LookInteractionBox",
 "language": "GDScript",
@@ -185,6 +190,7 @@ _global_script_class_icons={
 "Hitbox": "",
 "Hurtbox": "",
 "InteractionBox": "",
+"Layer": "",
 "LookInteractionBox": "",
 "Map": "",
 "MapBounds": "",
