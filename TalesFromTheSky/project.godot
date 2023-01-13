@@ -127,7 +127,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Skill",
 "language": "GDScript",
-"path": "res://Utilitaries/Skill.gd"
+"path": "res://Skills/Skill.gd"
 }, {
 "base": "Node",
 "class": "SkillList",
