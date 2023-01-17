@@ -2,6 +2,7 @@ extends Skill
 
 var IceEffect: Resource = load("res://Skills/Effects/Ice/IceEffect.tscn")
 var IceBlock: Resource = load("res://Skills/Effects/Ice/IceBlock.tscn")
+var IceHitbox: Resource = load("res://Skills/Effects/Ice/Hitbox.tscn")
 
 const tile_translation: Dictionary = {
 	29: 107,
@@ -15,10 +16,10 @@ const tile_translation: Dictionary = {
 func _ready():
 	print("Ice ready !")
 		
-func display_effect(player: Player, position: Vector2):
+func display_effect(player: Player, position: Vector2) :
 	var effect = player.add_effect_to_parent(IceEffect, position)
 	effect.connect("effect_end", self, "_on_effect_finished", [player, position])		
-
+	
 const displacements: Array = [
 	(Vector2.LEFT + Vector2.UP) * 8,
 	(Vector2.RIGHT + Vector2.UP) * 8,
@@ -53,21 +54,38 @@ func transform_ice_tiles(player: Player, position: Vector2):
 		for tilemap in layer.get_tilemaps():
 			res = res or transform_ice_tiles_(tilemap, player.global_position + position)
 	return res
+
+var effect_hitbox: Hitbox = null
+
+func freeze_enemies(player: Player, position: Vector2) -> bool:
+	var hitbox: Hitbox = IceHitbox.instance()
 	
-func freeze_enemies() -> bool:
-	for enemy in get_tree().get_nodes_in_group("Enemies"):
-		enemy.freeze()
+	player.add_child(hitbox)
+	hitbox.position = position
+	
+	remove_hitbox()
+	effect_hitbox = hitbox
 		
 	return false
-	
+
 func use(player: Player):
 	print("Ice used !")
+	
 	var position: Vector2 = player.direction.normalized() * 16
 	#_create_block(player, position)
 	display_effect(player, position)
-	if not (transform_ice_tiles(player, position) or freeze_enemies()):
+	if not (transform_ice_tiles(player, position) or freeze_enemies(player, position)):
 		_create_block(player, position)
 	
+func remove_hitbox():
+	if effect_hitbox and (effect_hitbox is Hitbox) and effect_hitbox.is_inside_tree():
+		effect_hitbox.queue_free()	
+	
+func on_end(player: Player):
+	remove_hitbox()
+	effect_hitbox = null
+	.on_end(player)
+
 	
 func _on_effect_finished(player: Player, position: Vector2):
-	player.end_skill()
+	end(player)

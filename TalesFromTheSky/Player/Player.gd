@@ -23,6 +23,7 @@ onready var collisionBox = $CollisionBox
 onready var effect_manager: EffectManager = $YSort/EffectManager
 
 var TreeUtil = load("res://Utilitaries/TreeUtil.gd")
+var Skill = load("res://Skill/Skill.gd")	
 
 func _enter_tree():
 	print("> Player enter tree")
@@ -55,6 +56,7 @@ var velocity = Vector2.ZERO #Current move speed (input_vector * WALK_SPEED when 
 var input_vector = Vector2.ZERO 
 var direction: Vector2 = Vector2.RIGHT #last non-zero value input_vector had in FREE state
 #var direction = "Right"
+var current_skill = null
 
 func is_looking_at(point: Vector2)->bool:
 	return Direction.is_same_direction4(direction, point - global_position)
@@ -89,7 +91,8 @@ func exit_state_knockback():
 	pass
 	
 func exit_state_spellcast():
-	pass
+	if current_skill:
+		current_skill.on_end(self)
 	
 func exit_current_state():
 	match state:
@@ -103,6 +106,7 @@ func exit_current_state():
 			exit_state_spellcast()
 
 func setState(state_):
+	exit_current_state()
 	match state_:
 		FREE:
 			start_state_free()
@@ -115,10 +119,10 @@ func setState(state_):
 			
 	state = state_
 
-
 func use_skill(skill):
 	setState(SPELL_CAST)
 	skill.use(self)
+	current_skill = skill
 	
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept"):
