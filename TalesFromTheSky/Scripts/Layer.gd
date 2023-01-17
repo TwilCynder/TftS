@@ -13,6 +13,7 @@ func  _find_tilemaps(node: Node):
 
 func _ready():
 	_find_tilemaps(self)
+	SceneManager.current_layer = null
 	return
 
 func get_tilemaps():

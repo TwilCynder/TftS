@@ -48,7 +48,9 @@ tile_data = PoolIntArray( 5, 0, 0, 6, 0, 1, 7, 0, 1, 8, 0, 2, 65541, 0, 131072, 
 
 [node name="TileMap" type="TileMap" parent="Layer 0"]
 tile_set = ExtResource( 11 )
+cell_size = Vector2( 16, 16 )
 format = 1
+tile_data = PoolIntArray( 1, 29, 0, 65544, 29, 0, 65545, 29, 0, 131080, 29, 0, 131081, 29, 0 )
 
 [node name="YSort" type="YSort" parent="Layer 0"]
 

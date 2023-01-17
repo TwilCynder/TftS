@@ -17,7 +17,6 @@ func process(delta):
 	pass
 	
 func physics_process(delta):
-	print("bordel")
 	pass
 
 func get_enemy():

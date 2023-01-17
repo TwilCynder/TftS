@@ -7,6 +7,7 @@ class_name Enemy
 enum {
 	FREE,
 	KNOCKBACK,
+	FRONZEN,
 	STATES
 } #An enemy that has more states should extend this enum using `enum {MYSTATE = STATES, ...}` 
 #wow j'ai vraiment inventé ça ? si c'est le cas gg twil d'il y a 2 semaines
@@ -27,10 +28,10 @@ func findAINode():
 	for n in get_children():
 		if n is AI:
 			ai = n as AI
-
+		
+			
 func _ready():
 	findAINode()
-	print(ai)
 	pass # Replace with function body.
 
 func die():
@@ -48,7 +49,35 @@ func check_death():
 
 func start_knockback(kb: Vector2) -> void:
 	current_speed = kb
-	state = KNOCKBACK
+	set_state(KNOCKBACK)
+	
+func freeze():
+	set_state(FRONZEN)
+	
+func unfreeze():
+	set_state(FREE)
+	
+func _start_freeze():
+	pause_mode = Node.PAUSE_MODE_STOP	
+	
+func _exit_freeze():
+	pause_mode = Node.PAUSE_MODE_INHERIT
+	
+func _exit_state(state):
+	match state:
+		FRONZEN: 
+			_exit_freeze()
+		
+func set_state(state):
+	if self.state != state:
+		_exit_state(self.state)
+	match state:
+		FRONZEN:
+			_start_freeze()
+	self.state = state
+	
+func is_blocked():
+	return state == KNOCKBACK or state == FRONZEN
 	
 func _process(delta):
 	ai.process(delta)
