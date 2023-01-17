@@ -66,15 +66,14 @@ func _physics_process(delta):
 			ai.physics_process(delta)
 			current_speed = move_and_slide(current_speed)
 			check_death()
-		
 
-func get_hit(hitbox: Hitbox, hurtbox: Hurtbox):
-	stats.decrease_hp()
-	if hitbox.knockback and hitbox.knockback != Vector2.ZERO:
-		start_knockback(hitbox.knockback * 100)
+func get_hit(hitbox: DamageHitbox, hurtbox: Hurtbox):
+	stats.remove_hp(hitbox.damage)
+	if hitbox.knockback:
+		start_knockback(hitbox.computeEffectiveKnockback(hurtbox.global_position))
 	else:
 		check_death()
 
 func _on_Hurtbox_hit(hitbox, hurtbox):
-	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
+	if (hitbox.hitboxType == hitbox.HitboxType.SWORD and hitbox is DamageHitbox):
 		get_hit(hitbox, hurtbox)
