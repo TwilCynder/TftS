@@ -4,7 +4,7 @@
 [ext_resource path="res://Enemies/Stats.gd" type="Script" id=2]
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=3]
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=["Enemies"]]
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

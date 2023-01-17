@@ -25,11 +25,12 @@ func _wander(delta):
 	pass #override me
 
 func _chase(delta):
-	current_speed = enemy.current_speed.length()
-	current_speed += chase_acceleration * delta
-	if current_speed >= chase_speed:
-		current_speed = chase_speed
-	enemy.current_speed = global_position.direction_to(hero.global_position) * current_speed
+	if not enemy.is_blocked():
+		current_speed = enemy.current_speed.length()
+		current_speed += chase_acceleration * delta
+		if current_speed >= chase_speed:
+			current_speed = chase_speed
+		enemy.current_speed = global_position.direction_to(hero.global_position) * current_speed
 
 func physics_process(delta):
 	match state:

@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Skills/Glace.gd" type="Script" id=1]
+[ext_resource path="res://Skills/Effects/Ice/Glace.gd" type="Script" id=1]
 [ext_resource path="res://Skills/Skill.gd" type="Script" id=2]
 [ext_resource path="res://Skills/SkillTree.gd" type="Script" id=3]
+
 
 
 

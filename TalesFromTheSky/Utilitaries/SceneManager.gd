@@ -10,6 +10,8 @@ onready var current_scene: Map = get_current_scene()
 var hero: Player setget set_hero, get_hero
 onready var limbo = $Limbo
 
+var current_layer = null
+
 func get_current_scene():
 	if _tree.current_scene is Map:
 		return _tree.current_scene
