@@ -73,9 +73,10 @@ func use(player: Player):
 	
 	var position: Vector2 = player.direction.normalized() * 16
 	#_create_block(player, position)
-	display_effect(player, position)
+	
 	if not (transform_ice_tiles(player, position) or freeze_enemies(player, position)):
 		_create_block(player, position)
+	display_effect(player, position)
 	
 func remove_hitbox():
 	if effect_hitbox and (effect_hitbox is Hitbox) and effect_hitbox.is_inside_tree():
