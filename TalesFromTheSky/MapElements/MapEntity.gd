@@ -21,6 +21,10 @@ func _enter_tree():
 func _freeze_animations(node: Node, state: bool = false):
 	for child in node.get_children():
 		if child is AnimatedSprite:
+			if state:
+				VFX.remove_material(child)
+			else:
+				VFX.ice_material(child)
 			child.playing = state
 		_freeze_animations(child)
 

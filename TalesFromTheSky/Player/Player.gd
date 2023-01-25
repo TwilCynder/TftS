@@ -86,14 +86,14 @@ func exit_state_free():
 	
 func exit_state_attack():
 	swordHitbox.set_enabled(false)
-	
+
 func exit_state_knockback():
 	pass
 	
 func exit_state_spellcast():
 	if current_skill:
 		current_skill.on_end(self)
-	
+
 func exit_current_state():
 	match state:
 		FREE:

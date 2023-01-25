@@ -229,6 +229,7 @@ SceneManager="*res://Utilitaries/SceneManager.tscn"
 FontManager="*res://Utilitaries/FontManager/FontManager.tscn"
 GameEvents="*res://Scripts/GameEvents.gd"
 ProgressManager="*res://Player/ProgressManager.tscn"
+VFX="*res://VFX/VFXManager.gd"
 
 [display]
 
