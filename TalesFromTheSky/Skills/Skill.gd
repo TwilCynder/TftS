@@ -20,3 +20,9 @@ func _ready():
 
 func use(player: Player):
 	pass
+
+func end(player: Player):
+	player.end_skill()
+
+func on_end(player: Player):
+	pass

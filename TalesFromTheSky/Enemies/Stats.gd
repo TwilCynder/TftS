@@ -17,3 +17,6 @@ func set_hp(hp_: int):
 		
 func decrease_hp():
 	hp = hp - 1
+	
+func remove_hp(amount: int):
+	hp -= amount
