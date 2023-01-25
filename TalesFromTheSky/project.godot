@@ -59,7 +59,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://MapElements/Destination/EffectManager.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "MapEntity",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Enemies/Enemy.gd"
@@ -229,6 +229,7 @@ SceneManager="*res://Utilitaries/SceneManager.tscn"
 FontManager="*res://Utilitaries/FontManager/FontManager.tscn"
 GameEvents="*res://Scripts/GameEvents.gd"
 ProgressManager="*res://Player/ProgressManager.tscn"
+VFX="*res://VFX/VFXManager.gd"
 
 [display]
 
@@ -269,22 +270,22 @@ texture={
 
 attack={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 skill={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
 [layer_names]
 
 2d_render/layer_1="Background"
-2d_physics/layer_1="Player"
 2d_render/layer_2="Player"
-2d_physics/layer_2="Enemy"
 2d_render/layer_3="Objects"
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
 2d_physics/layer_3="SolidEntity"
 2d_physics/layer_4="Hitboxes"
 2d_physics/layer_5="Hurtboxes"

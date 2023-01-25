@@ -13,6 +13,8 @@ const tile_translation: Dictionary = {
 	37: 103
 }
 
+const delay = 5
+
 func _ready():
 	print("Ice ready !")
 		
@@ -72,7 +74,6 @@ func use(player: Player):
 	print("Ice used !")
 	
 	var position: Vector2 = player.direction.normalized() * 16
-	#_create_block(player, position)
 	
 	if not (transform_ice_tiles(player, position) or freeze_enemies(player, position)):
 		_create_block(player, position)

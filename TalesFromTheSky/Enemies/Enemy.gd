@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends MapEntity
 
 #base code for enemies.
 
@@ -52,9 +52,16 @@ func start_knockback(kb: Vector2) -> void:
 	set_state(KNOCKBACK)
 	
 func freeze():
+	freeze_animations()
 	set_state(FRONZEN)
 	
+func ice_freeze(time: int):
+	freeze()
+	yield(get_tree().create_timer(time),"timeout")
+	unfreeze()	
+	
 func unfreeze():
+	unfreeze_animations()
 	set_state(FREE)
 	
 func _start_freeze():
@@ -62,6 +69,7 @@ func _start_freeze():
 	
 func _exit_freeze():
 	pause_mode = Node.PAUSE_MODE_INHERIT
+	current_speed = Vector2.ZERO
 	
 func _exit_state(state):
 	match state:

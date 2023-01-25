@@ -17,3 +17,19 @@ func instance_on_parent(res: Resource, position: Vector2):
 func _enter_tree():
 	if SceneManager.current_layer:
 		layer = SceneManager.current_layer
+
+func _freeze_animations(node: Node, state: bool = false):
+	for child in node.get_children():
+		if child is AnimatedSprite:
+			if state:
+				VFX.remove_material(child)
+			else:
+				VFX.ice_material(child)
+			child.playing = state
+		_freeze_animations(child)
+
+func freeze_animations():
+	_freeze_animations(self)
+
+func unfreeze_animations():
+	_freeze_animations(self, true)
