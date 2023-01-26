@@ -999,8 +999,8 @@ graph_offset = Vector2( 0, 25.7592 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=40]
 
 [sub_resource type="CapsuleShape2D" id=41]
-radius = 4.45667
-height = 9.06667
+radius = 9.25707
+height = 8.11908
 
 [sub_resource type="CapsuleShape2D" id=42]
 radius = 8.0
@@ -1052,7 +1052,7 @@ hitboxType = 1
 damage = 2
 
 [node name="CollisionShape2D" parent="HitboxPivot/Swordhitbox" index="0"]
-position = Vector2( 0.50204, 3.75214 )
+position = Vector2( 0.855596, 5.87346 )
 rotation = 1.5708
 shape = SubResource( 41 )
 disabled = true
