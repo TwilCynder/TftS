@@ -6,7 +6,7 @@ func _ready():
 	enemy_type = "Bat"
 
 func _process(delta):
-	if state != KNOCKBACK:
+	if not is_blocked():
 		sprite.flip_h = current_speed.x < 0
 
 func die():

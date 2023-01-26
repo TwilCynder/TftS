@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://World/tutorial/outdoors_tutorial.tres" type="TileSet" id=1]
 [ext_resource path="res://World/tutorial/Tree.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://Maps/Tests/Test1.gd" type="Script" id=5]
 [ext_resource path="res://Maps/Tests/cliffTileset.tres" type="TileSet" id=6]
 [ext_resource path="res://World/tutorial/Grass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Layer.gd" type="Script" id=8]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=10]
+[ext_resource path="res://Tilesets/Forest.tres" type="TileSet" id=11]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=13]
 [ext_resource path="res://MapElements/NPC/NPC.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Sprites/NPCs/Soldier/soldier.tres" type="SpriteFrames" id=15]
@@ -22,6 +24,7 @@ script = ExtResource( 5 )
 map_name = "Test 1"
 
 [node name="Layer 0" type="Node2D" parent="."]
+script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Layer 0"]
 texture = ExtResource( 4 )
@@ -42,6 +45,12 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 4
 format = 1
 tile_data = PoolIntArray( 5, 0, 0, 6, 0, 1, 7, 0, 1, 8, 0, 2, 65541, 0, 131072, 65542, 0, 131073, 65543, 0, 131073, 65544, 0, 131074, 327682, 0, 0, 327683, 0, 2, 393218, 0, 65536, 393219, 0, 65538, 524287, 0, 0, 458752, 0, 1, 458753, 0, 1, 458754, 0, 131078, 458755, 0, 65538, 589823, 0, 131072, 524288, 0, 131073, 524289, 0, 131073, 524290, 0, 131073, 524291, 0, 9, 524292, 0, 1, 524293, 0, 1, 524294, 0, 1, 524295, 0, 1, 524296, 0, 1, 524297, 0, 1, 524298, 0, 1, 524299, 0, 1, 524300, 0, 1, 524301, 0, 1, 524302, 0, 1, 524303, 0, 2, 589827, 0, 131072, 589828, 0, 131073, 589829, 0, 131073, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131073, 589833, 0, 131073, 589834, 0, 131073, 589835, 0, 131073, 589836, 0, 131073, 589837, 0, 131073, 589838, 0, 131073, 589839, 0, 131074 )
+
+[node name="TileMap" type="TileMap" parent="Layer 0"]
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1, 29, 0, 65544, 29, 0, 65545, 29, 0, 131080, 29, 0, 131081, 29, 0 )
 
 [node name="YSort" type="YSort" parent="Layer 0"]
 

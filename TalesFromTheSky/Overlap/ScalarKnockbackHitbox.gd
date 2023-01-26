@@ -1,4 +1,4 @@
-extends Hitbox
+extends DamageHitbox
 
 class_name ScalarKnockbackHitbox
 

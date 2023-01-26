@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends MapEntity
 
 #base code for enemies.
 
@@ -7,6 +7,7 @@ class_name Enemy
 enum {
 	FREE,
 	KNOCKBACK,
+	FRONZEN,
 	STATES
 } #An enemy that has more states should extend this enum using `enum {MYSTATE = STATES, ...}` 
 #wow j'ai vraiment inventé ça ? si c'est le cas gg twil d'il y a 2 semaines
@@ -27,10 +28,10 @@ func findAINode():
 	for n in get_children():
 		if n is AI:
 			ai = n as AI
-
+		
+			
 func _ready():
 	findAINode()
-	print(ai)
 	pass # Replace with function body.
 
 func die():
@@ -48,7 +49,43 @@ func check_death():
 
 func start_knockback(kb: Vector2) -> void:
 	current_speed = kb
-	state = KNOCKBACK
+	set_state(KNOCKBACK)
+	
+func freeze():
+	freeze_animations()
+	set_state(FRONZEN)
+	
+func ice_freeze(time: int):
+	freeze()
+	yield(get_tree().create_timer(time),"timeout")
+	unfreeze()	
+	
+func unfreeze():
+	unfreeze_animations()
+	set_state(FREE)
+	
+func _start_freeze():
+	pause_mode = Node.PAUSE_MODE_STOP	
+	
+func _exit_freeze():
+	pause_mode = Node.PAUSE_MODE_INHERIT
+	current_speed = Vector2.ZERO
+	
+func _exit_state(state):
+	match state:
+		FRONZEN: 
+			_exit_freeze()
+		
+func set_state(state):
+	if self.state != state:
+		_exit_state(self.state)
+	match state:
+		FRONZEN:
+			_start_freeze()
+	self.state = state
+	
+func is_blocked():
+	return state == KNOCKBACK or state == FRONZEN
 	
 func _process(delta):
 	ai.process(delta)
@@ -66,15 +103,14 @@ func _physics_process(delta):
 			ai.physics_process(delta)
 			current_speed = move_and_slide(current_speed)
 			check_death()
-		
 
-func get_hit(hitbox: Hitbox, hurtbox: Hurtbox):
-	stats.decrease_hp()
-	if hitbox.knockback and hitbox.knockback != Vector2.ZERO:
-		start_knockback(hitbox.knockback * 100)
+func get_hit(hitbox: DamageHitbox, hurtbox: Hurtbox):
+	stats.remove_hp(hitbox.damage)
+	if hitbox.knockback:
+		start_knockback(hitbox.computeEffectiveKnockback(hurtbox.global_position))
 	else:
 		check_death()
 
 func _on_Hurtbox_hit(hitbox, hurtbox):
-	if (hitbox.hitboxType == hitbox.HitboxType.SWORD):
+	if (hitbox.hitboxType == hitbox.HitboxType.SWORD and hitbox is DamageHitbox):
 		get_hit(hitbox, hurtbox)

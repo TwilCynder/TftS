@@ -1,4 +1,4 @@
-extends Node2D
+extends YSort
 
 class_name EffectManager
 
