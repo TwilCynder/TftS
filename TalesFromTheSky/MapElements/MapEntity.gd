@@ -10,9 +10,15 @@ func add_to_parent(node: Node2D, position: Vector2):
 	get_parent().add_child(node)
 	node.position = self.position if position == null else self.position + position
 
-func instance_on_parent(res: Resource, position: Vector2):
+func instance_on_parent(res: Resource, position: Vector2) -> Node:
 	var node = res.instance()
 	add_to_parent(node, position)
+	return node
+	
+func instance_on_parent_below_node(res: Resource, position: Vector2, tree_position: Node):
+	var node = res.instance()
+	get_parent().add_child_below_node(node, tree_position)
+	node.position = self.position if position == null else self.position + position
 
 func _enter_tree():
 	if SceneManager.current_layer:

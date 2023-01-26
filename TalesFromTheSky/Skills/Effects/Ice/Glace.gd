@@ -2,7 +2,7 @@ extends Skill
 
 var IceEffect: Resource = load("res://Skills/Effects/Ice/IceEffect.tscn")
 var IceBlock: Resource = load("res://Skills/Effects/Ice/IceBlock.tscn")
-var IceHitbox: Resource = load("res://Skills/Effects/Ice/Hitbox.tscn")
+var iceHitbox: Resource = load("res://Skills/Effects/Ice/Hitbox.tscn")
 
 const tile_translation: Dictionary = {
 	29: 107,
@@ -18,9 +18,10 @@ const delay = 5
 func _ready():
 	print("Ice ready !")
 		
-func display_effect(player: Player, position: Vector2) :
-	var effect = player.add_effect_to_parent(IceEffect, position)
+func display_effect(player: Player, position: Vector2) -> AnimatedEffect:
+	var effect: AnimatedEffect = player.add_effect_to_parent(IceEffect, position)
 	effect.connect("effect_end", self, "_on_effect_finished", [player, position])		
+	return effect
 	
 const displacements: Array = [
 	(Vector2.LEFT + Vector2.UP) * 8,
@@ -46,8 +47,8 @@ static func transform_ice_tile(tilemap: TileMap, position: Vector2) -> bool:
 		return true
 	return false
 	
-func _create_block(player: Player, position: Vector2):
-	player.instance_on_parent(IceBlock, position)	
+func _create_block(player: Player, position: Vector2, effect: Node = null) -> Node:
+	return player.instance_on_parent(IceBlock, position)	
 	
 func transform_ice_tiles(player: Player, position: Vector2):
 	var res: bool = false
@@ -57,17 +58,17 @@ func transform_ice_tiles(player: Player, position: Vector2):
 			res = res or transform_ice_tiles_(tilemap, player.global_position + position)
 	return res
 
-var effect_hitbox: Hitbox = null
+var effect_hitbox: IceHitbox = null
 
 func freeze_enemies(player: Player, position: Vector2) -> bool:
-	var hitbox: Hitbox = IceHitbox.instance()
+	var hitbox: Hitbox = iceHitbox.instance()
 	
 	player.add_child(hitbox)
 	hitbox.position = position
 	
 	remove_hitbox()
 	effect_hitbox = hitbox
-		
+	
 	return false
 
 func use(player: Player):
@@ -75,9 +76,14 @@ func use(player: Player):
 	
 	var position: Vector2 = player.direction.normalized() * 16
 	#_create_block(player, position)
-	if not (transform_ice_tiles(player, position) or freeze_enemies(player, position)):
-		_create_block(player, position)
-	display_effect(player, position)
+	
+	transform_ice_tiles(player, position) or freeze_enemies(player, position)
+	var effect: AnimatedEffect = display_effect(player, position)
+	yield(get_tree().create_timer(0.1),"timeout")
+	if (effect_hitbox and not effect_hitbox.enemy_hit):
+		var block: Node = _create_block(player, position, effect)
+		TreeUtil.move_node_above(block, effect)
+	
 	
 func remove_hitbox():
 	if effect_hitbox and (effect_hitbox is Hitbox) and effect_hitbox.is_inside_tree():
