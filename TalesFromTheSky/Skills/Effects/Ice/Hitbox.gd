@@ -12,7 +12,7 @@ func _on_animation_finished():
 
 func _freeze_enemy(enemy: Enemy):
 	enemy_hit = true
-	enemy.ice_freeze(1)
+	enemy.ice_freeze(3)
 
 func _on_Hitbox_hit(hitbox, hurtbox):
 	if hurtbox.owner and hurtbox.owner is Enemy:
