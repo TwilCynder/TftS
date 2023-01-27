@@ -5,12 +5,13 @@ var IceBlock: Resource = load("res://Skills/Effects/Ice/IceBlock.tscn")
 var iceHitbox: Resource = load("res://Skills/Effects/Ice/Hitbox.tscn")
 
 const tile_translation: Dictionary = {
-	29: 107,
+	29: 119,
 	28: 105,
 	54: 100,
 	41: 101,
 	45: 102,
-	37: 103
+	37: 103,
+	117: 108,
 }
 
 const delay = 5
