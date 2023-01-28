@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Utilitaries/MapBounds.gd" type="Script" id=1]
 [ext_resource path="res://Tilesets/Forest.tres" type="TileSet" id=2]
 [ext_resource path="res://Tilesets/Backgrounds/sky_background.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MapElements/Destination/Destination.tscn" type="PackedScene" id=6]
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 4 )
@@ -33,3 +34,11 @@ position = Vector2( 160, 360 )
 [node name="MapBounds" type="Node2D" parent="."]
 script = ExtResource( 1 )
 size = Vector2( 320, 720 )
+
+[node name="Destinations" type="Node2D" parent="."]
+
+[node name="Destination" parent="Destinations" instance=ExtResource( 6 )]
+position = Vector2( 160, 696 )
+dest_name = "South access"
+
+[node name="Téléporteurs" type="Node2D" parent="."]
