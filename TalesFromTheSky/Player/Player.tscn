@@ -999,8 +999,8 @@ graph_offset = Vector2( 0, 25.7592 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=40]
 
 [sub_resource type="CapsuleShape2D" id=41]
-radius = 9.25707
-height = 8.11908
+radius = 4.45667
+height = 9.06667
 
 [sub_resource type="CapsuleShape2D" id=42]
 radius = 8.0
@@ -1052,10 +1052,9 @@ hitboxType = 1
 damage = 2
 
 [node name="CollisionShape2D" parent="HitboxPivot/Swordhitbox" index="0"]
-position = Vector2( 0.855596, 5.87346 )
+position = Vector2( 2.80013, 0.570151 )
 rotation = 1.5708
 shape = SubResource( 41 )
-disabled = true
 
 [node name="CenterArea" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 1.96686 )
@@ -1080,8 +1079,9 @@ script = ExtResource( 15 )
 
 [node name="PlayerSprite" type="Sprite" parent="YSort"]
 position = Vector2( 0, -9 )
-texture = ExtResource( 14 )
-hframes = 8
+texture = ExtResource( 9 )
+hframes = 2
+frame = 1
 
 [connection signal="hit" from="Hurtbox" to="." method="_on_Hurtbox_hit"]
 

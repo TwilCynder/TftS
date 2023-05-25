@@ -30,13 +30,14 @@ const displacements: Array = [
 	(Vector2.RIGHT + Vector2.DOWN) * 8
 ]		
 		
-static func transform_ice_tiles_(tilemap: TileMap, position: Vector2):
+static func transform_ice_tiles_(tilemap: TileMap, position: Vector2)->bool:
 	position = (position - tilemap.global_position)
 	var res: bool = false
-	for i in range(0, 4):
-		if transform_ice_tile(tilemap, position + displacements[i]):
-			res = true
-	return res
+	#for i in range(0, 4):
+	#	if transform_ice_tile(tilemap, position + displacements[i]):
+	#		res = true
+	#return res
+	return transform_ice_tile(tilemap, position)
 		
 static func transform_ice_tile(tilemap: TileMap, position: Vector2) -> bool:
 	position = position/16
