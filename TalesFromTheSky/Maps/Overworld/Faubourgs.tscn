@@ -65,6 +65,9 @@ margin_right = 2240.0
 margin_bottom = 1680.0
 texture = ExtResource( 2 )
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Layer 1" type="Node2D" parent="."]
 script = ExtResource( 13 )

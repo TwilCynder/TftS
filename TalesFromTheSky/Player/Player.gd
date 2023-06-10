@@ -46,8 +46,8 @@ func _ready():
 			root.set_hero(self)
 	
 	animationTree.active = true
-	
-const WALK_SPEED: int = 100
+
+const WALK_SPEED: int = 150
 const ACCELERATION: int = 200
 const traction: int = 3000
 

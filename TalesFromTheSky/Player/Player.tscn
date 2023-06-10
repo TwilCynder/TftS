@@ -1174,8 +1174,9 @@ script = ExtResource( 15 )
 
 [node name="PlayerSprite" type="Sprite" parent="YSort"]
 position = Vector2( 0, -9 )
-texture = ExtResource( 14 )
-hframes = 8
+texture = ExtResource( 9 )
+hframes = 2
+frame = 1
 
 [connection signal="hit" from="Hurtbox" to="." method="_on_Hurtbox_hit"]
 
