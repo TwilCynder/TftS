@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=65 format=2]
+[gd_resource type="TileSet" load_steps=74 format=2]
 
 [ext_resource path="res://Tilesets (Secret of Mana)/forest_tileset.png" type="Texture" id=1]
 
@@ -86,8 +86,35 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=68]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
+[sub_resource type="ConvexPolygonShape2D" id=69]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=70]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=71]
+points = PoolVector2Array( 0, 0, 8, 8, 16, 16, 0, 16 )
+
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 16, 16, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=72]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=73]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=74]
+points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=75]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=76]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=77]
+points = PoolVector2Array( 8, 8, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 16, 0, 16, 0, 16, 16, 0, 16 )
@@ -3153,3 +3180,206 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 195/shape_one_way_margin = 0.0
 195/shapes = [  ]
 195/z_index = 0
+196/name = "forest_tileset.png 196"
+196/texture = ExtResource( 1 )
+196/tex_offset = Vector2( 0, 0 )
+196/modulate = Color( 1, 1, 1, 1 )
+196/region = Rect2( 48, 576, 16, 16 )
+196/tile_mode = 0
+196/occluder_offset = Vector2( 0, 0 )
+196/navigation_offset = Vector2( 0, 0 )
+196/shape_offset = Vector2( 0, 0 )
+196/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+196/shape_one_way = false
+196/shape_one_way_margin = 0.0
+196/shapes = [  ]
+196/z_index = 0
+197/name = "forest_tileset.png 197"
+197/texture = ExtResource( 1 )
+197/tex_offset = Vector2( 0, 0 )
+197/modulate = Color( 1, 1, 1, 1 )
+197/region = Rect2( 128, 592, 16, 16 )
+197/tile_mode = 0
+197/occluder_offset = Vector2( 0, 0 )
+197/navigation_offset = Vector2( 0, 0 )
+197/shape_offset = Vector2( 0, 0 )
+197/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+197/shape = SubResource( 69 )
+197/shape_one_way = false
+197/shape_one_way_margin = 1.0
+197/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 69 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+197/z_index = 0
+198/name = "forest_tileset.png 198"
+198/texture = ExtResource( 1 )
+198/tex_offset = Vector2( 0, 0 )
+198/modulate = Color( 1, 1, 1, 1 )
+198/region = Rect2( 128, 576, 16, 16 )
+198/tile_mode = 0
+198/occluder_offset = Vector2( 0, 0 )
+198/navigation_offset = Vector2( 0, 0 )
+198/shape_offset = Vector2( 0, 0 )
+198/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+198/shape = SubResource( 70 )
+198/shape_one_way = false
+198/shape_one_way_margin = 1.0
+198/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 70 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+198/z_index = 0
+199/name = "forest_tileset.png 199"
+199/texture = ExtResource( 1 )
+199/tex_offset = Vector2( 0, 0 )
+199/modulate = Color( 1, 1, 1, 1 )
+199/region = Rect2( 128, 560, 16, 16 )
+199/tile_mode = 0
+199/occluder_offset = Vector2( 0, 0 )
+199/navigation_offset = Vector2( 0, 0 )
+199/shape_offset = Vector2( 0, 0 )
+199/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+199/shape = SubResource( 71 )
+199/shape_one_way = false
+199/shape_one_way_margin = 1.0
+199/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 71 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+199/z_index = 0
+200/name = "forest_tileset.png 200"
+200/texture = ExtResource( 1 )
+200/tex_offset = Vector2( 0, 0 )
+200/modulate = Color( 1, 1, 1, 1 )
+200/region = Rect2( 144, 592, 16, 16 )
+200/tile_mode = 0
+200/occluder_offset = Vector2( 0, 0 )
+200/navigation_offset = Vector2( 0, 0 )
+200/shape_offset = Vector2( 0, 0 )
+200/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+200/shape = SubResource( 72 )
+200/shape_one_way = false
+200/shape_one_way_margin = 1.0
+200/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 72 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+200/z_index = 0
+201/name = "forest_tileset.png 201"
+201/texture = ExtResource( 1 )
+201/tex_offset = Vector2( 0, 0 )
+201/modulate = Color( 1, 1, 1, 1 )
+201/region = Rect2( 144, 576, 16, 16 )
+201/tile_mode = 0
+201/occluder_offset = Vector2( 0, 0 )
+201/navigation_offset = Vector2( 0, 0 )
+201/shape_offset = Vector2( 0, 0 )
+201/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+201/shape = SubResource( 73 )
+201/shape_one_way = false
+201/shape_one_way_margin = 1.0
+201/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 73 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+201/z_index = 0
+202/name = "forest_tileset.png 202"
+202/texture = ExtResource( 1 )
+202/tex_offset = Vector2( 0, 0 )
+202/modulate = Color( 1, 1, 1, 1 )
+202/region = Rect2( 144, 560, 16, 16 )
+202/tile_mode = 0
+202/occluder_offset = Vector2( 0, 0 )
+202/navigation_offset = Vector2( 0, 0 )
+202/shape_offset = Vector2( 0, 0 )
+202/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+202/shape = SubResource( 74 )
+202/shape_one_way = false
+202/shape_one_way_margin = 1.0
+202/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 74 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+202/z_index = 0
+203/name = "forest_tileset.png 203"
+203/texture = ExtResource( 1 )
+203/tex_offset = Vector2( 0, 0 )
+203/modulate = Color( 1, 1, 1, 1 )
+203/region = Rect2( 160, 592, 16, 16 )
+203/tile_mode = 0
+203/occluder_offset = Vector2( 0, 0 )
+203/navigation_offset = Vector2( 0, 0 )
+203/shape_offset = Vector2( 0, 0 )
+203/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+203/shape = SubResource( 75 )
+203/shape_one_way = false
+203/shape_one_way_margin = 1.0
+203/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 75 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+203/z_index = 0
+204/name = "forest_tileset.png 204"
+204/texture = ExtResource( 1 )
+204/tex_offset = Vector2( 0, 0 )
+204/modulate = Color( 1, 1, 1, 1 )
+204/region = Rect2( 160, 576, 16, 16 )
+204/tile_mode = 0
+204/occluder_offset = Vector2( 0, 0 )
+204/navigation_offset = Vector2( 0, 0 )
+204/shape_offset = Vector2( 0, 0 )
+204/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+204/shape = SubResource( 76 )
+204/shape_one_way = false
+204/shape_one_way_margin = 1.0
+204/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 76 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+204/z_index = 0
+205/name = "forest_tileset.png 205"
+205/texture = ExtResource( 1 )
+205/tex_offset = Vector2( 0, 0 )
+205/modulate = Color( 1, 1, 1, 1 )
+205/region = Rect2( 160, 560, 16, 16 )
+205/tile_mode = 0
+205/occluder_offset = Vector2( 0, 0 )
+205/navigation_offset = Vector2( 0, 0 )
+205/shape_offset = Vector2( 0, 0 )
+205/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+205/shape = SubResource( 77 )
+205/shape_one_way = false
+205/shape_one_way_margin = 1.0
+205/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 77 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+205/z_index = 0
