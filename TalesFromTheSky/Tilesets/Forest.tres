@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=53 format=2]
+[gd_resource type="TileSet" load_steps=65 format=2]
 
 [ext_resource path="res://Tilesets (Secret of Mana)/forest_tileset.png" type="Texture" id=1]
 
@@ -49,6 +49,42 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 0, 16, 32, 16, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=57]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=58]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=59]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=60]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=61]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=62]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=63]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=64]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=65]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=66]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=67]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=68]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 16, 16, 16, 16, 0, 16 )
@@ -2725,3 +2761,395 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 173/shape_one_way_margin = 0.0
 173/shapes = [  ]
 173/z_index = 0
+174/name = "forest_tileset.png 174"
+174/texture = ExtResource( 1 )
+174/tex_offset = Vector2( 0, 0 )
+174/modulate = Color( 1, 1, 1, 1 )
+174/region = Rect2( 144, 256, 32, 32 )
+174/tile_mode = 0
+174/occluder_offset = Vector2( 0, 0 )
+174/navigation_offset = Vector2( 0, 0 )
+174/shape_offset = Vector2( 0, 0 )
+174/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+174/shape = SubResource( 57 )
+174/shape_one_way = false
+174/shape_one_way_margin = 1.0
+174/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 57 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+174/z_index = 0
+175/name = "forest_tileset.png 175"
+175/texture = ExtResource( 1 )
+175/tex_offset = Vector2( 0, 0 )
+175/modulate = Color( 1, 1, 1, 1 )
+175/region = Rect2( 144, 240, 16, 16 )
+175/tile_mode = 0
+175/occluder_offset = Vector2( 0, 0 )
+175/navigation_offset = Vector2( 0, 0 )
+175/shape_offset = Vector2( 0, 0 )
+175/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+175/shape = SubResource( 58 )
+175/shape_one_way = false
+175/shape_one_way_margin = 1.0
+175/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 58 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+175/z_index = 0
+176/name = "forest_tileset.png 176"
+176/texture = ExtResource( 1 )
+176/tex_offset = Vector2( 0, 0 )
+176/modulate = Color( 1, 1, 1, 1 )
+176/region = Rect2( 160, 240, 16, 16 )
+176/tile_mode = 0
+176/occluder_offset = Vector2( 0, 0 )
+176/navigation_offset = Vector2( 0, 0 )
+176/shape_offset = Vector2( 0, 0 )
+176/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+176/shape = SubResource( 59 )
+176/shape_one_way = false
+176/shape_one_way_margin = 1.0
+176/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 59 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+176/z_index = 0
+177/name = "forest_tileset.png 177"
+177/texture = ExtResource( 1 )
+177/tex_offset = Vector2( 0, 0 )
+177/modulate = Color( 1, 1, 1, 1 )
+177/region = Rect2( 64, 416, 16, 16 )
+177/tile_mode = 0
+177/occluder_offset = Vector2( 0, 0 )
+177/navigation_offset = Vector2( 0, 0 )
+177/shape_offset = Vector2( 0, 0 )
+177/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+177/shape = SubResource( 60 )
+177/shape_one_way = false
+177/shape_one_way_margin = 1.0
+177/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 60 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+177/z_index = 0
+178/name = "forest_tileset.png 178"
+178/texture = ExtResource( 1 )
+178/tex_offset = Vector2( 0, 0 )
+178/modulate = Color( 1, 1, 1, 1 )
+178/region = Rect2( 80, 416, 16, 16 )
+178/tile_mode = 0
+178/occluder_offset = Vector2( 0, 0 )
+178/navigation_offset = Vector2( 0, 0 )
+178/shape_offset = Vector2( 0, 0 )
+178/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+178/shape = SubResource( 61 )
+178/shape_one_way = false
+178/shape_one_way_margin = 1.0
+178/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 61 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+178/z_index = 0
+179/name = "forest_tileset.png 179"
+179/texture = ExtResource( 1 )
+179/tex_offset = Vector2( 0, 0 )
+179/modulate = Color( 1, 1, 1, 1 )
+179/region = Rect2( 96, 416, 16, 16 )
+179/tile_mode = 0
+179/occluder_offset = Vector2( 0, 0 )
+179/navigation_offset = Vector2( 0, 0 )
+179/shape_offset = Vector2( 0, 0 )
+179/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+179/shape = SubResource( 62 )
+179/shape_one_way = false
+179/shape_one_way_margin = 1.0
+179/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 62 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+179/z_index = 0
+180/name = "forest_tileset.png 180"
+180/texture = ExtResource( 1 )
+180/tex_offset = Vector2( 0, 0 )
+180/modulate = Color( 1, 1, 1, 1 )
+180/region = Rect2( 96, 432, 16, 16 )
+180/tile_mode = 0
+180/occluder_offset = Vector2( 0, 0 )
+180/navigation_offset = Vector2( 0, 0 )
+180/shape_offset = Vector2( 0, 0 )
+180/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+180/shape = SubResource( 63 )
+180/shape_one_way = false
+180/shape_one_way_margin = 1.0
+180/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 63 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+180/z_index = 0
+181/name = "forest_tileset.png 181"
+181/texture = ExtResource( 1 )
+181/tex_offset = Vector2( 0, 0 )
+181/modulate = Color( 1, 1, 1, 1 )
+181/region = Rect2( 96, 448, 16, 16 )
+181/tile_mode = 0
+181/occluder_offset = Vector2( 0, 0 )
+181/navigation_offset = Vector2( 0, 0 )
+181/shape_offset = Vector2( 0, 0 )
+181/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+181/shape = SubResource( 64 )
+181/shape_one_way = false
+181/shape_one_way_margin = 1.0
+181/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 64 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+181/z_index = 0
+182/name = "forest_tileset.png 182"
+182/texture = ExtResource( 1 )
+182/tex_offset = Vector2( 0, 0 )
+182/modulate = Color( 1, 1, 1, 1 )
+182/region = Rect2( 80, 448, 16, 16 )
+182/tile_mode = 0
+182/occluder_offset = Vector2( 0, 0 )
+182/navigation_offset = Vector2( 0, 0 )
+182/shape_offset = Vector2( 0, 0 )
+182/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+182/shape = SubResource( 65 )
+182/shape_one_way = false
+182/shape_one_way_margin = 1.0
+182/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 65 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+182/z_index = 0
+183/name = "forest_tileset.png 183"
+183/texture = ExtResource( 1 )
+183/tex_offset = Vector2( 0, 0 )
+183/modulate = Color( 1, 1, 1, 1 )
+183/region = Rect2( 64, 448, 16, 16 )
+183/tile_mode = 0
+183/occluder_offset = Vector2( 0, 0 )
+183/navigation_offset = Vector2( 0, 0 )
+183/shape_offset = Vector2( 0, 0 )
+183/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+183/shape = SubResource( 66 )
+183/shape_one_way = false
+183/shape_one_way_margin = 1.0
+183/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 66 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+183/z_index = 0
+184/name = "forest_tileset.png 184"
+184/texture = ExtResource( 1 )
+184/tex_offset = Vector2( 0, 0 )
+184/modulate = Color( 1, 1, 1, 1 )
+184/region = Rect2( 64, 432, 16, 16 )
+184/tile_mode = 0
+184/occluder_offset = Vector2( 0, 0 )
+184/navigation_offset = Vector2( 0, 0 )
+184/shape_offset = Vector2( 0, 0 )
+184/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+184/shape = SubResource( 67 )
+184/shape_one_way = false
+184/shape_one_way_margin = 1.0
+184/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 67 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+184/z_index = 0
+185/name = "forest_tileset.png 185"
+185/texture = ExtResource( 1 )
+185/tex_offset = Vector2( 0, 0 )
+185/modulate = Color( 1, 1, 1, 1 )
+185/region = Rect2( 80, 432, 16, 16 )
+185/tile_mode = 0
+185/occluder_offset = Vector2( 0, 0 )
+185/navigation_offset = Vector2( 0, 0 )
+185/shape_offset = Vector2( 0, 0 )
+185/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+185/shape = SubResource( 68 )
+185/shape_one_way = false
+185/shape_one_way_margin = 1.0
+185/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 68 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+185/z_index = 0
+186/name = "forest_tileset.png 186"
+186/texture = ExtResource( 1 )
+186/tex_offset = Vector2( 0, 0 )
+186/modulate = Color( 1, 1, 1, 1 )
+186/region = Rect2( 48, 416, 16, 16 )
+186/tile_mode = 0
+186/occluder_offset = Vector2( 0, 0 )
+186/navigation_offset = Vector2( 0, 0 )
+186/shape_offset = Vector2( 0, 0 )
+186/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+186/shape_one_way = false
+186/shape_one_way_margin = 0.0
+186/shapes = [  ]
+186/z_index = 0
+187/name = "forest_tileset.png 187"
+187/texture = ExtResource( 1 )
+187/tex_offset = Vector2( 0, 0 )
+187/modulate = Color( 1, 1, 1, 1 )
+187/region = Rect2( 48, 432, 16, 16 )
+187/tile_mode = 0
+187/occluder_offset = Vector2( 0, 0 )
+187/navigation_offset = Vector2( 0, 0 )
+187/shape_offset = Vector2( 0, 0 )
+187/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+187/shape_one_way = false
+187/shape_one_way_margin = 0.0
+187/shapes = [  ]
+187/z_index = 0
+188/name = "forest_tileset.png 188"
+188/texture = ExtResource( 1 )
+188/tex_offset = Vector2( 0, 0 )
+188/modulate = Color( 1, 1, 1, 1 )
+188/region = Rect2( 48, 448, 16, 16 )
+188/tile_mode = 0
+188/occluder_offset = Vector2( 0, 0 )
+188/navigation_offset = Vector2( 0, 0 )
+188/shape_offset = Vector2( 0, 0 )
+188/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+188/shape_one_way = false
+188/shape_one_way_margin = 0.0
+188/shapes = [  ]
+188/z_index = 0
+189/name = "forest_tileset.png 189"
+189/texture = ExtResource( 1 )
+189/tex_offset = Vector2( 0, 0 )
+189/modulate = Color( 1, 1, 1, 1 )
+189/region = Rect2( 32, 448, 16, 16 )
+189/tile_mode = 0
+189/occluder_offset = Vector2( 0, 0 )
+189/navigation_offset = Vector2( 0, 0 )
+189/shape_offset = Vector2( 0, 0 )
+189/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+189/shape_one_way = false
+189/shape_one_way_margin = 0.0
+189/shapes = [  ]
+189/z_index = 0
+190/name = "forest_tileset.png 190"
+190/texture = ExtResource( 1 )
+190/tex_offset = Vector2( 0, 0 )
+190/modulate = Color( 1, 1, 1, 1 )
+190/region = Rect2( 16, 448, 16, 16 )
+190/tile_mode = 0
+190/occluder_offset = Vector2( 0, 0 )
+190/navigation_offset = Vector2( 0, 0 )
+190/shape_offset = Vector2( 0, 0 )
+190/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+190/shape_one_way = false
+190/shape_one_way_margin = 0.0
+190/shapes = [  ]
+190/z_index = 0
+191/name = "forest_tileset.png 191"
+191/texture = ExtResource( 1 )
+191/tex_offset = Vector2( 0, 0 )
+191/modulate = Color( 1, 1, 1, 1 )
+191/region = Rect2( 16, 432, 16, 16 )
+191/tile_mode = 0
+191/occluder_offset = Vector2( 0, 0 )
+191/navigation_offset = Vector2( 0, 0 )
+191/shape_offset = Vector2( 0, 0 )
+191/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+191/shape_one_way = false
+191/shape_one_way_margin = 0.0
+191/shapes = [  ]
+191/z_index = 0
+192/name = "forest_tileset.png 192"
+192/texture = ExtResource( 1 )
+192/tex_offset = Vector2( 0, 0 )
+192/modulate = Color( 1, 1, 1, 1 )
+192/region = Rect2( 16, 416, 16, 16 )
+192/tile_mode = 0
+192/occluder_offset = Vector2( 0, 0 )
+192/navigation_offset = Vector2( 0, 0 )
+192/shape_offset = Vector2( 0, 0 )
+192/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+192/shape_one_way = false
+192/shape_one_way_margin = 0.0
+192/shapes = [  ]
+192/z_index = 0
+193/name = "forest_tileset.png 193"
+193/texture = ExtResource( 1 )
+193/tex_offset = Vector2( 0, 0 )
+193/modulate = Color( 1, 1, 1, 1 )
+193/region = Rect2( 32, 416, 16, 16 )
+193/tile_mode = 0
+193/occluder_offset = Vector2( 0, 0 )
+193/navigation_offset = Vector2( 0, 0 )
+193/shape_offset = Vector2( 0, 0 )
+193/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+193/shape_one_way = false
+193/shape_one_way_margin = 0.0
+193/shapes = [  ]
+193/z_index = 0
+194/name = "forest_tileset.png 194"
+194/texture = ExtResource( 1 )
+194/tex_offset = Vector2( 0, 0 )
+194/modulate = Color( 1, 1, 1, 1 )
+194/region = Rect2( 32, 432, 16, 16 )
+194/tile_mode = 0
+194/occluder_offset = Vector2( 0, 0 )
+194/navigation_offset = Vector2( 0, 0 )
+194/shape_offset = Vector2( 0, 0 )
+194/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+194/shape_one_way = false
+194/shape_one_way_margin = 0.0
+194/shapes = [  ]
+194/z_index = 0
+195/name = "forest_tileset.png 195"
+195/texture = ExtResource( 1 )
+195/tex_offset = Vector2( 0, 0 )
+195/modulate = Color( 1, 1, 1, 1 )
+195/region = Rect2( 0, 448, 16, 16 )
+195/tile_mode = 0
+195/occluder_offset = Vector2( 0, 0 )
+195/navigation_offset = Vector2( 0, 0 )
+195/shape_offset = Vector2( 0, 0 )
+195/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+195/shape_one_way = false
+195/shape_one_way_margin = 0.0
+195/shapes = [  ]
+195/z_index = 0
